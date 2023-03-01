@@ -1,5 +1,7 @@
 import time
+import re
 
+masterSleep = .6
 
 def pressEnter():
     print("\n")
@@ -9,7 +11,6 @@ def pressEnter():
 
 def intro():
     def logo():
-        print("\n")
         print("Welcome to")
         print(" ██████╗ ███████╗███████╗ █████╗ ████████╗██╗ ██████╗ ")
         print("██╔════╝ ██╔════╝██╔════╝██╔══██╗╚══██╔══╝██║██╔════╝ ")
@@ -26,9 +27,33 @@ def intro():
         pass
 
     logo()
-    time.sleep(1)
+    time.sleep(masterSleep)
     exposition()
     pass
 
 
+def playerSetup():
+    class player:
+        def __init__(self, name):
+            self.name = name
+            pass
+
+    print("\n")
+    print("Welcome to the post-apocalyptic wasteland. Before we begin, what is your name?")
+    print("\n")
+
+    name = re.sub(r"[^a-zA-Z ]", "", input("My name is... ")).title()
+    if name == "":
+        randomNames = []
+        pass
+    survivor = player(name)
+    time.sleep(masterSleep)
+
+    print("\n")
+    print(
+        f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
+    pass
+
+
 intro()
+playerSetup()

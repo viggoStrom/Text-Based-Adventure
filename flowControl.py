@@ -11,12 +11,17 @@ class flow:
         time.sleep(config["masterSleep"])
         pass
 
-    def pressEnter():
+    def newLine():
         print("\n")
+        pass
+
+    def pressEnter():
+        flow.newLine()
         input("[Press enter to continue]")
         pass
 
     def choose(*options):
+        presets = ("go", "look", "check")
         print("What do you do?")
         for option in options:
             if option == "go":
@@ -25,10 +30,20 @@ class flow:
             elif option == "look":
                 option = "look (north, south, west, east)"
                 pass
-            
+            elif option == "check":
+                option = "check (inventory, stats)"
+                pass
+
             print("<" + option.title() + ">")
             pass
         flow.sleep()
-        print("\n")
-        rawInput = input("I want to... ")
+        flow.newLine()
+        rawInput = input("I want to... ").lower()
+        if "check" in rawInput:
+            flow.newLine()
+            print("check what?")
+            print("<Inventory> <Stats>")
+            flow.newLine()
+            input("...")
+            pass
         pass

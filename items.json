@@ -12,11 +12,19 @@
         "range": 0,
         "traits": ["light"]
     },
+    "geigerCounter": {
+        "name": "a geiger counter",
+        "damage": 0,
+        "speed": 0,
+        "range": 0,
+        "traits": ["radiationMeter"]
+    },
     "item": {
         "name": "an item",
         "damage": 0,
         "speed": 0,
         "range": 0,
         "traits": [""]
-    }
+    },
+    "stopTrailingComma": true
 }

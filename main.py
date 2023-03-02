@@ -4,6 +4,7 @@ import random
 import player
 import flowControl
 flow = flowControl.flow
+import mapGenerator
 
 import json
 item = json.load(open("items.json"))
@@ -19,7 +20,7 @@ def intro():
         print("██║   ██║██╔══╝  ╚════██║██╔══██║   ██║   ██║██║   ██║")
         print("╚██████╔╝███████╗███████║██║  ██║   ██║   ██║╚██████╔╝")
         print(" ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ")
-        print("\n")
+        flow.newLine()
         pass
 
     def exposition():
@@ -34,9 +35,9 @@ def intro():
 
 
 def playerSetup():
-    print("\n")
+    flow.newLine()
     print("Welcome to the post-apocalyptic wasteland. Before we begin, what is your name?")
-    print("\n")
+    flow.newLine()
 
     name = re.sub(r"[^a-zA-Z ]", "", input("My name is... ")).title()
     if name == "":
@@ -59,7 +60,7 @@ def playerSetup():
 
     flow.sleep()
 
-    print("\n")
+    flow.newLine()
     print(
         f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
     return survivor
@@ -67,13 +68,16 @@ def playerSetup():
 
 def vaultSequence():
     flow.pressEnter()
-    print("\n")
+    flow.newLine()
 
     print("You slowly open your eyes, feeling groggy and disoriented. As your senses slowly come back to you, you hear the familiar sound of Geiger counters going wild in the background. You look down to see a knife in your hand, but you have no idea how you got here, or what happened. You seem to be in a vault of some sort, but everything is hazy and confusing.")
     flow.sleep()
+    flow.newLine()
     survivor.pickUp(item["knife"])
+    survivor.pickUp(item["geigerCounter"])
 
-    flow.choose("search (floor, lockers, bodies)", "go", "look")
+    flow.newLine()
+    flow.choose("search (floor, lockers, bodies)", "go", "look","check")
     pass
 
 
@@ -81,3 +85,4 @@ def vaultSequence():
 # survivor = playerSetup()
 survivor = player.player("Fiona Fernandez")
 vaultSequence()
+map = mapGenerator.map(survivor.name)

@@ -2,8 +2,11 @@ import time
 import re
 import random
 import player
+import items
 
-masterSleep = .6
+config = {
+    "masterSleep": .6,
+}
 
 
 def pressEnter():
@@ -30,7 +33,7 @@ def intro():
         pass
 
     logo()
-    time.sleep(masterSleep)
+    time.sleep(config["masterSleep"])
     exposition()
     pass
 
@@ -53,16 +56,29 @@ def playerSetup():
             "Fiona Fernandez",
             "Kyle King",
             "Samantha Stevens"
-            ]
+        ]
         name = random.choice(randomNames)
         pass
+
     survivor = player.player(name)
-    time.sleep(masterSleep)
+
+    time.sleep(config["masterSleep"])
 
     print("\n")
-    print(f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
+    print(
+        f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
+    return survivor
+
+
+def vaultSequence():
+    time.sleep(config["masterSleep"]*3)
+    print("\n")
+    print("You slowly open your eyes, feeling groggy and disoriented. As your senses slowly come back to you, you hear the familiar sound of Geiger counters going wild in the background. You look down to see a knife in your hand, but you have no idea how you got here, or what happened. You seem to be in a vault of some sort, but everything is hazy and confusing.")
+    survivor.
+    print("What do you do?")
     pass
 
 
 intro()
-playerSetup()
+survivor = playerSetup()
+vaultSequence()

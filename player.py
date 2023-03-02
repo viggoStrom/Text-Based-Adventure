@@ -20,9 +20,14 @@ class player:
         pass
 
     def pickUp(self, item):
-        self.inventory.append(item)
-        print(f'[You picked up {item["name"]}]')
+        if item not in self.inventory:
+            self.inventory.append(item)
+            print(f'[You picked up {item["name"]}]')
+        else:
+            self.inventory[self.inventory.index(item)]["quantity"] += 1
+            print(f'[You picked up another {item["name"].split(" ")[1]}]')
         pass
+
 
     # def hungerTick(self):
     #     shouldHunger = [True]*3 + [False]*7

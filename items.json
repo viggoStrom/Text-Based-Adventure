@@ -1,9 +1,22 @@
 {
-    "weapon": {
-        "knife": {
-            "damage": 1,
-            "speed": 1,
-            "range": 1
-        }
+    "knife": {
+        "name": "a knife",
+        "damage": 1,
+        "speed": 1,
+        "range": 1
+    },
+    "flashlight": {
+        "name": "a flashlight",
+        "damage": 0,
+        "speed": 0,
+        "range": 0,
+        "traits": ["light"]
+    },
+    "item": {
+        "name": "an item",
+        "damage": 0,
+        "speed": 0,
+        "range": 0,
+        "traits": [""]
     }
 }

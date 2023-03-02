@@ -2,7 +2,11 @@ import time
 import re
 import random
 import player
-import items
+import json
+
+# item = json.loads()
+print(open("items.json", "r"))
+# print(item)
 
 config = {
     "masterSleep": .6,
@@ -71,14 +75,14 @@ def playerSetup():
 
 
 def vaultSequence():
-    time.sleep(config["masterSleep"]*3)
+    time.sleep(config["masterSleep"]*2.5)
     print("\n")
     print("You slowly open your eyes, feeling groggy and disoriented. As your senses slowly come back to you, you hear the familiar sound of Geiger counters going wild in the background. You look down to see a knife in your hand, but you have no idea how you got here, or what happened. You seem to be in a vault of some sort, but everything is hazy and confusing.")
-    survivor.
+    survivor.pickUp(item["knife"])
     print("What do you do?")
     pass
 
 
-intro()
+# intro()
 survivor = playerSetup()
 vaultSequence()

@@ -4,7 +4,7 @@ import random
 import player
 import flowControl
 flow = flowControl.flow
-import mapGenerator
+import saveMapGenerator
 
 import json
 item = json.load(open("items.json"))
@@ -86,7 +86,7 @@ def vaultSequence():
 # survivor = playerSetup()
 survivor = player.player("Fiona Fernandez")
 # vaultSequence()
-map = mapGenerator.map(survivor)
+game = saveMapGenerator.map(survivor)
 
 # endings:
 # time capsule

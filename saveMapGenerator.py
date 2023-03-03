@@ -2,6 +2,7 @@ import player
 import random
 import datetime
 import re
+import json
 
 import flowControl
 flow = flowControl.flow
@@ -27,14 +28,13 @@ class map():
                 pass
             except:
                 generateAdress()
-            
+
             return saveAdress
 
         saveAdress = generateAdress()
 
-        with open(saveAdress, "w") as save:
-            save.write(
-                "{\"room\": [{\"coordinates\": [0,0],\"enemies\": [],\"radiationLevel\": 50,\"loot\": []}],\"player\": {}}")
+        with json.load(open(saveAdress)) as save:
+            save["player"] = survivor
             pass
 
     def generateRoom(cardinalDirection):

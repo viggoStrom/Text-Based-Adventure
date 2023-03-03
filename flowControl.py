@@ -43,12 +43,20 @@ class flow:
         flow.newLine()
 
         def showStats():
-            print("Yes, here you go.")
+            flow.newLine()
+            print("Sure, here you go.")
+            flow.sleep()
+            print(f'- Your name: {player.name}')
+            print(f'- Health: {player.health}%')
+            print(f'- Radiation exposure: {player.radiation} rads/min')
+            print(f'- Armor: {player.armor}%')
+            print(f'- Speed: {player.speed}')
+            flow.newLine()
             pass
 
         def showInventory():
             flow.newLine()
-            print("Yes, here you go.")
+            print("Sure, here you go.")
             flow.sleep()
             for item in player.inventory:
                 if item["quantity"] > 1:
@@ -72,10 +80,10 @@ class flow:
                 print("<Inventory> <Stats>")
                 flow.newLine()
                 response = input("...").lower()
-                if "inve" in response:
+                if ("in" or "nv") in response:
                     showInventory()
                     return
-                elif "stat" in response:
+                elif ("st" or "at") in response:
                     showStats()
                     return
 

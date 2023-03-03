@@ -78,14 +78,14 @@ def vaultSequence():
     flow.sleep()
     flow.newLine()
 
-    flow.choose(survivor, "search (floor, lockers, bodies)", "go", "look","check")
+    flow.choose(survivor, "search (floor, lockers, bodies)", "go", "look","check", "menu")
     pass
 
 
 # intro()
 # survivor = playerSetup()
 survivor = player.player("Fiona Fernandez")
-# vaultSequence()
+vaultSequence()
 game = saveMapGenerator.map(survivor)
 
 # endings:

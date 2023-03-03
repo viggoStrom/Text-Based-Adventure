@@ -29,7 +29,6 @@ class map():
             except:
                 generateAdress()
 
-            print(saveAdress)
             return saveAdress
 
         saveAdress = generateAdress()
@@ -40,7 +39,10 @@ class map():
             print("Error: Files missing... (./saveTemplate.json)")
             SystemExit
 
-        # with 
+        save = json.load(open(saveAdress))
+        save["player"]["position"] = survivor.position
+        json.dump(save, open(saveAdress, "w"))
+        pass
 
     def generateRoom(cardinalDirection):
         pass

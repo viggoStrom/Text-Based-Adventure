@@ -42,10 +42,12 @@ class flow:
         flow.newLine()
 
         def showStats():
+            print("Yes, here you go.")
             pass
 
         def showInventory():
             flow.newLine()
+            print("Yes, here you go.")
             print(player.inventory)
             pass
 
@@ -53,8 +55,11 @@ class flow:
             rawInput = input("I want to... ").lower()
             
             if "chec" and "inve" in rawInput:
-                flow.newLine()
-                print("Yes, here you go.")
+                showInventory()
+                return
+            elif "chec" and "stat" in rawInput:
+                showStats()
+                return
             elif "chec" in rawInput:
                 flow.newLine()
                 print("Check what?")
@@ -63,12 +68,14 @@ class flow:
                 response = input("...").lower()
                 if "inve" in response:
                     showInventory()
+                    return
                 elif "stat" in response:
                     showStats()
-            else:
-                print("Please rephrase that.")
-                flow.newLine()
-                flow.sleep()
-                findKeyword()
+                    return
+
+            print("Please rephrase that.")
+            flow.newLine()
+            flow.sleep()
+            findKeyword()
 
         findKeyword()

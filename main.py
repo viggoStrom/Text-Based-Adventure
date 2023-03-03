@@ -75,14 +75,35 @@ def vaultSequence():
     flow.newLine()
 
     survivor.pickUp(item["knife"])
-
+    flow.sleep()
     flow.newLine()
+
     flow.choose(survivor, "search (floor, lockers, bodies)", "go", "look","check")
     pass
 
 
-# intro()
-# survivor = playerSetup()
-survivor = player.player("Fiona Fernandez")
+intro()
+survivor = playerSetup()
+# survivor = player.player("Fiona Fernandez")
 vaultSequence()
 map = mapGenerator.map(survivor.name)
+
+# endings:
+# time capsule
+# deep sleep a la futurama
+# find true love and settle down
+# die
+# suicide
+# die from radiation
+# buy a casino
+# make a deal with the devil
+#   become a mutant
+# roaches take over
+
+# ideas:
+# fake difficulty slider
+# aglets as currency
+# stickers you find on fruit as currency
+# burn down a city
+# roach boss
+# ability to consume every object ranging from hp gain to death

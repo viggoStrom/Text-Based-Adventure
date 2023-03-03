@@ -1,34 +1,52 @@
 {
     "knife": {
-        "name": "a knife",
-        "quantity":1,
+        "name": [
+            "a knife",
+            "knife"
+        ],
+        "quantity": 1,
         "damage": 1,
         "speed": 1,
-        "range": 1
+        "range": 1,
+        "traits": [
+            "weapon"
+        ]
     },
     "flashlight": {
-        "name": "a flashlight",
-        "quantity":1,
+        "name": [
+            "a flashlight",
+            "flashlight"
+        ],
+        "quantity": 1,
         "damage": 0,
         "speed": 0,
         "range": 0,
-        "traits": ["light"]
+        "traits": [
+            "light"
+        ]
     },
     "geigerCounter": {
-        "name": "a geiger counter",
-        "quantity":1,
+        "name": [
+            "a geiger counter",
+            "geiger counter"
+        ],
+        "quantity": 1,
         "damage": 0,
         "speed": 0,
         "range": 0,
-        "traits": ["radiationMeter"]
+        "traits": [
+            "radiationMeter"
+        ]
     },
     "item": {
-        "name": "an item",
-        "quantity":1,
+        "name": ["an item", "item"],
+        "quantity": 1,
         "damage": 0,
         "speed": 0,
         "range": 0,
-        "traits": [""]
+        "traits": [
+            ""
+        ]
     },
     "stopTrailingComma": true
 }

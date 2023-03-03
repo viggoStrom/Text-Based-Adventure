@@ -22,10 +22,10 @@ class player:
     def pickUp(self, item):
         if item not in self.inventory:
             self.inventory.append(item)
-            print(f'[You picked up {item["name"]}]')
+            print(f'[You picked up {item["name"][0]}]')
         else:
             self.inventory[self.inventory.index(item)]["quantity"] += 1
-            print(f'[You picked up another {item["name"].split(" ")[1]}]')
+            print(f'[You picked up another {item["name"][1]}]')
         pass
 
 

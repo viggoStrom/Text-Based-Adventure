@@ -1,8 +1,8 @@
-import player
 import random
 import datetime
 import re
 import json
+import shutil
 
 import flowControl
 flow = flowControl.flow
@@ -29,13 +29,18 @@ class map():
             except:
                 generateAdress()
 
+            print(saveAdress)
             return saveAdress
 
         saveAdress = generateAdress()
 
-        with json.load(open(saveAdress)) as save:
-            save["player"] = survivor
-            pass
+        try:
+            shutil.copy("saveTemplate.json", saveAdress)
+        except:
+            print("Error: Files missing... (./saveTemplate.json)")
+            SystemExit
+
+        # with 
 
     def generateRoom(cardinalDirection):
         pass

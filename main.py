@@ -82,11 +82,11 @@ def vaultSequence():
     pass
 
 
-intro()
-survivor = playerSetup()
-# survivor = player.player("Fiona Fernandez")
-vaultSequence()
-map = mapGenerator.map(survivor.name)
+# intro()
+# survivor = playerSetup()
+survivor = player.player("Fiona Fernandez")
+# vaultSequence()
+map = mapGenerator.map(survivor)
 
 # endings:
 # time capsule
@@ -106,4 +106,5 @@ map = mapGenerator.map(survivor.name)
 # stickers you find on fruit as currency
 # burn down a city
 # roach boss
-# ability to consume every object ranging from hp gain to death
+# ability to consume every object ranging from hp gain to death (suicide)
+# save system via json

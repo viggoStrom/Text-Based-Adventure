@@ -21,7 +21,6 @@ class flow:
         pass
 
     def choose(player, *options):
-        presets = ("go", "look", "check")
         print("What do you do?")
 
         for option in options:
@@ -34,6 +33,8 @@ class flow:
             elif option == "check":
                 option = "check (inventory, stats)"
                 pass
+            elif option == "menu":
+                option = "menu (save, quit, save & quit)"
 
             print("<" + option.title() + ">")
             pass
@@ -48,7 +49,12 @@ class flow:
         def showInventory():
             flow.newLine()
             print("Yes, here you go.")
-            print(player.inventory)
+            flow.sleep()
+            for item in player.inventory:
+                if item["quantity"] > 1:
+                    print(" - " + str(item["quantity"]) + "x " + item["name"][1])
+                else:
+                    print(" - " + item["name"][0])
             pass
 
         def findKeyword():

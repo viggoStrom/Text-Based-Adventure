@@ -17,6 +17,7 @@ class player:
             "leftHand": {},
             "body": {},
             }
+        self.position = [0,0]
         pass
 
     def pickUp(self, item):

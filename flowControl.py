@@ -1,4 +1,5 @@
 import time
+import re
 import json
 config = json.load(open("config.json"))
 
@@ -15,12 +16,17 @@ class flow:
         print("\n")
         pass
 
+    def input(prompt):
+        return re.sub(r"[^a-zA-Z0-9 ]", "", input(prompt))
+
     def pressEnter():
         flow.newLine()
-        input("[Press enter to continue]")
+        flow.input("[Press enter to continue]")
         pass
 
     def choose(player, *options):
+        result = None
+
         print("What do you do?")
 
         for option in options:
@@ -41,6 +47,18 @@ class flow:
 
         flow.sleep()
         flow.newLine()
+
+        def saveNQuitGame(save=False, quit=False):
+            if save == True:
+                # save game here
+                flow.sleep()
+                print("Saving game...")
+                flow.sleep()
+                print("Save failed!")
+                return
+            if quit == True:
+                SystemExit
+            return
 
         def showStats():
             print("Sure, here you go.")
@@ -68,10 +86,9 @@ class flow:
             print("Check what?")
             print("<Inventory> <Stats>")
             flow.newLine()
-            response = input("...").lower()
+            response = flow.input("...")
             if ("in" or "nv") in response:
                 showInventory()
-                return
             elif ("st" or "at") in response:
                 showStats()
             pass
@@ -81,39 +98,61 @@ class flow:
             print("What do you want to do?")
             print("<Save> <Quit> <Save & Quit>")
             flow.newLine()
-            response = input("... ")
-            if "qui" in response:
+            response = flow.input("... ")
+            if ("qui" and "sav") in response:
+                saveNQuitGame(save=True, quit=True)
+                pass
+            elif "sav" in response:
+                saveNQuitGame(save=True)
+                pass
+            elif "qui" in response:
+                saveNQuitGame(quit=True)
                 pass
             pass
 
-        def saveNQuitGame(save=False, quit=False):
-            if save == True:
-                # save game here
+        def showSearch():
+            if options[0].lower() == "search":
+                
                 pass
-            if quit == True:
-                SystemExit
+            pass
+
+        def showLook():
+
+            pass
+
+        def showGo():
+
             pass
 
         def findKeyword():
-            rawInput = input("I want to... ").lower()
+            rawInput = flow.input("I want to... ")
             flow.newLine()
 
             if "chec" and "inve" in rawInput:
                 showInventory()
-                return
+                return None
             elif "chec" and "stat" in rawInput:
                 showStats()
-                return
+                return None
             elif "chec" in rawInput:
                 showCheck()
-                return
+                return None
             elif "menu" in rawInput:
-
-                return
+                showMenu()
+                return None
+            elif "sear" in rawInput:
+                showSearch()
+                return None
+            elif "look" in rawInput:
+                showLook()
+                return None
+            elif "go" in rawInput:
+                showGo()
+                return None
 
             print("Please rephrase that.")
             flow.newLine()
             flow.sleep()
             findKeyword()
 
-        findKeyword()
+        return findKeyword()

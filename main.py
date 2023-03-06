@@ -1,4 +1,3 @@
-import re
 import random
 
 import player
@@ -39,7 +38,7 @@ def playerSetup():
     print("Welcome to the post-apocalyptic wasteland. Before we begin, what is your name?")
     flow.newLine()
 
-    name = re.sub(r"[^a-zA-Z ]", "", input("My name is... ")).title()
+    name = flow.input("My name is... ").title()
     if name == "":
         randomNames = [
             "Sally Smith",
@@ -78,7 +77,7 @@ def vaultSequence():
     flow.sleep()
     flow.newLine()
 
-    flow.choose(survivor, "search (floor, lockers, bodies)", "go", "look","check", "menu")
+    flow.choose(survivor, "search (floor[geigerCounter], lockers[flashlight], bodies[aglet])", "go", "look","check", "menu")
     pass
 
 

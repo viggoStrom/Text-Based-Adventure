@@ -29,6 +29,10 @@ class player:
             print(f'[You picked up another {item["name"][1]}]')
         pass
 
+    def loot(self):
+        result = None
+        result = self.pickUp()
+        return result
 
     # def hungerTick(self):
     #     shouldHunger = [True]*3 + [False]*7

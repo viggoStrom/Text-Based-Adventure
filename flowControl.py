@@ -16,8 +16,11 @@ class flow:
         print("\n")
         pass
 
+    def filter(inputString):
+        return re.sub(r"[^a-zA-Z0-9 ]", "", inputString)
+
     def input(prompt):
-        return re.sub(r"[^a-zA-Z0-9 ]", "", input(prompt))
+        return flow.filter(input(prompt)).lower()
 
     def pressEnter():
         flow.newLine()
@@ -26,29 +29,37 @@ class flow:
 
     def choose(player, *options):
         result = None
+        options = list(options)
 
         print("What do you do?")
 
         for option in options:
-            if option == "go":
-                option = "go (north, south, west, east)"
+            if option.split()[0] == "search":
+                availablePlaces = re.findall(r'(\w+)\[', option)
+                availableItems = re.findall(r'\[([^\]]+)\]', option)
+                searchTable = {w: i for w, i in zip(availablePlaces, availableItems)}
+                
+                options[options.index(option)] = re.sub(r'\[[^\]]*\]', '', option)
+                pass
+            elif option == "go":
+                options[options.index(option)] = "go (north, south, west, east)"
                 pass
             elif option == "look":
-                option = "look (north, south, west, east)"
+                options[options.index(option)] = "look (north, south, west, east)"
                 pass
             elif option == "check":
-                option = "check (inventory, stats)"
+                options[options.index(option)] = "check (inventory, stats)"
                 pass
             elif option == "menu":
-                option = "menu (save, quit, save & quit)"
+                options[options.index(option)] = "menu (save, quit, save & quit)"
 
+        for option in options:
             print("<" + option.title() + ">")
-            pass
 
         flow.sleep()
         flow.newLine()
 
-        def saveNQuitGame(save=False, quit=False):
+        def saveAndQuitGame(save=False, quit=False):
             if save == True:
                 # save game here
                 flow.sleep()
@@ -94,25 +105,38 @@ class flow:
             pass
 
         def showMenu():
-            flow.sleep()
             print("What do you want to do?")
             print("<Save> <Quit> <Save & Quit>")
             flow.newLine()
             response = flow.input("... ")
             if ("qui" and "sav") in response:
-                saveNQuitGame(save=True, quit=True)
+                saveAndQuitGame(save=True, quit=True)
                 pass
             elif "sav" in response:
-                saveNQuitGame(save=True)
+                saveAndQuitGame(save=True)
                 pass
             elif "qui" in response:
-                saveNQuitGame(quit=True)
+                saveAndQuitGame(quit=True)
                 pass
             pass
 
         def showSearch():
-            if options[0].lower() == "search":
-                
+            for option in options:
+                if option.split()[0].lower() == "search":
+                    searchablePlaces = flow.filter(option).split()[1:]
+                    pass
+
+            print("What do you want to search?")
+            searchOptions = ""
+            for element in searchablePlaces:
+                searchOptions += f"<{str(element).title()}> "
+            print(searchOptions)
+            flow.newLine()
+
+            response = flow.input("I want to search the... ")
+            
+            for place in searchTable:
+                # player pick up item if place name (first two letters) in response then player pickup that item and maybe remove or boolean check for if you have already found that item
                 pass
             pass
 
@@ -127,6 +151,7 @@ class flow:
         def findKeyword():
             rawInput = flow.input("I want to... ")
             flow.newLine()
+            flow.sleep()
 
             if "chec" and "inve" in rawInput:
                 showInventory()

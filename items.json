@@ -28,7 +28,8 @@
     "geigerCounter": {
         "name": [
             "a geiger counter",
-            "geiger counter"
+            "geiger counter",
+            "geigerCounter"
         ],
         "quantity": 1,
         "damage": 0,
@@ -36,6 +37,16 @@
         "range": 0,
         "traits": [
             "radiationMeter"
+        ]
+    },
+    "aglet": {
+        "name": ["an aglet", "aglet"],
+        "quantity": 1,
+        "damage": 0,
+        "speed": 0,
+        "range": 0,
+        "traits": [
+            "currency"
         ]
     },
     "item": {

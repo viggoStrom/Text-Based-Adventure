@@ -43,31 +43,61 @@ class flow:
         flow.newLine()
 
         def showStats():
-            flow.newLine()
             print("Sure, here you go.")
             flow.sleep()
             print(f'- Your name: {player.name}')
             print(f'- Health: {player.health}%')
             print(f'- Radiation exposure: {player.radiation} rads/min')
-            print(f'- Armor: {player.armor}%')
+            print(f'- Armor: {player.armor}')
             print(f'- Speed: {player.speed}')
             flow.newLine()
             pass
 
         def showInventory():
-            flow.newLine()
             print("Sure, here you go.")
             flow.sleep()
             for item in player.inventory:
                 if item["quantity"] > 1:
-                    print(" - " + str(item["quantity"]) + "x " + item["name"][1])
+                    print(" - " + str(item["quantity"]
+                                      ) + "x " + item["name"][1])
                 else:
                     print(" - " + item["name"][0])
             pass
 
+        def showCheck():
+            print("Check what?")
+            print("<Inventory> <Stats>")
+            flow.newLine()
+            response = input("...").lower()
+            if ("in" or "nv") in response:
+                showInventory()
+                return
+            elif ("st" or "at") in response:
+                showStats()
+            pass
+
+        def showMenu():
+            flow.sleep()
+            print("What do you want to do?")
+            print("<Save> <Quit> <Save & Quit>")
+            flow.newLine()
+            response = input("... ")
+            if "qui" in response:
+                pass
+            pass
+
+        def saveNQuitGame(save=False, quit=False):
+            if save == True:
+                # save game here
+                pass
+            if quit == True:
+                SystemExit
+            pass
+
         def findKeyword():
             rawInput = input("I want to... ").lower()
-            
+            flow.newLine()
+
             if "chec" and "inve" in rawInput:
                 showInventory()
                 return
@@ -75,17 +105,11 @@ class flow:
                 showStats()
                 return
             elif "chec" in rawInput:
-                flow.newLine()
-                print("Check what?")
-                print("<Inventory> <Stats>")
-                flow.newLine()
-                response = input("...").lower()
-                if ("in" or "nv") in response:
-                    showInventory()
-                    return
-                elif ("st" or "at") in response:
-                    showStats()
-                    return
+                showCheck()
+                return
+            elif "menu" in rawInput:
+
+                return
 
             print("Please rephrase that.")
             flow.newLine()

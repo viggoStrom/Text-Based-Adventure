@@ -1,7 +1,8 @@
+import flowControl
 import json
 config = json.load(open("config.json"))
-import flowControl
 flow = flowControl.flow
+
 
 class player:
     def __init__(self, name):
@@ -11,12 +12,12 @@ class player:
         self.armor = 0
         self.speed = 1
         self.radiation = 25
-        self.equiped = {                
+        self.equiped = {
             "rightHand": {},
             "leftHand": {},
             "body": {},
-            }
-        self.position = [0,0]
+        }
+        self.position = [0, 0]
         pass
 
     def pickUp(self, item):
@@ -30,10 +31,33 @@ class player:
             print(f'[You picked up another {item["name"][1]}]')
         pass
 
+    def showStats(self):
+        flow.newLine()
+        print("Sure, here you go.")
+        flow.sleep()
+        print(f'- Your name: {self.name}')
+        print(f'- Health: {self.health}%')
+        print(f'- Radiation exposure: {self.radiation} rads/min')
+        print(f'- Armor: {self.armor}')
+        print(f'- Speed: {self.speed}')
+        flow.newLine()
+        pass
+
+    def showInventory(self):
+        flow.newLine()
+        print("Sure, here you go.")
+        flow.sleep()
+        for item in self.inventory:
+            if item["quantity"] > 1:
+                print(" - " + str(item["quantity"]
+                                  ) + "x " + item["name"][1])
+            else:
+                print(" - " + item["name"][0])
+        pass
+
     # def hungerTick(self):
     #     shouldHunger = [True]*3 + [False]*7
     #     if random.choice(shouldHunger):
     #         self.stats["hunger"] -= 5 * config["hungerModifier"]
     #         pass
     #     pass
-

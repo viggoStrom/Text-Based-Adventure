@@ -75,37 +75,15 @@ class flow:
                 SystemExit
             return
 
-        def showStats():
-            print("Sure, here you go.")
-            flow.sleep()
-            print(f'- Your name: {player.name}')
-            print(f'- Health: {player.health}%')
-            print(f'- Radiation exposure: {player.radiation} rads/min')
-            print(f'- Armor: {player.armor}')
-            print(f'- Speed: {player.speed}')
-            flow.newLine()
-            pass
-
-        def showInventory():
-            print("Sure, here you go.")
-            flow.sleep()
-            for item in player.inventory:
-                if item["quantity"] > 1:
-                    print(" - " + str(item["quantity"]
-                                      ) + "x " + item["name"][1])
-                else:
-                    print(" - " + item["name"][0])
-            pass
-
         def showCheck():
             print("Check what?")
             print("<Inventory> <Stats>")
             flow.newLine()
             response = flow.input("...")
             if ("in" or "nv") in response:
-                showInventory()
+                player.showInventory()
             elif ("st" or "at") in response:
-                showStats()
+                player.showStats()
             pass
 
         def showMenu():
@@ -142,11 +120,10 @@ class flow:
             for place in searchTable:
                 if place[:3] in response:
                     player.pickUp(items[searchTable[place]])
-                    # break
             pass
 
         def showLook():
-
+            
             pass
 
         def showGo():
@@ -159,10 +136,10 @@ class flow:
             flow.sleep()
 
             if "chec" and "inve" in rawInput:
-                showInventory()
+                player.showInventory()
                 return None
             elif "chec" and "stat" in rawInput:
-                showStats()
+                player.showStats()
                 return None
             elif "chec" in rawInput:
                 showCheck()

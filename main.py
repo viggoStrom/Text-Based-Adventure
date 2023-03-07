@@ -77,9 +77,9 @@ def vaultSequence():
     pass
 
 
-# intro()
-# survivor = playerSetup()
-survivor = player.player("Fiona Fernandez")
+intro()
+survivor = playerSetup()
+# survivor = player.player("Fiona Fernandez")
 vaultSequence()
 game = saveMapGenerator.map(survivor)
 

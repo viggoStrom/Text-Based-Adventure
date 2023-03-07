@@ -73,33 +73,33 @@ def vaultSequence():
 
     survivor.pickUp(item["knife"])
 
-    flow.choose(survivor, "search (floor[geigerCounter], lockers[flashlight], bodies[aglet])", "go", "look","check", "menu")
+    flow.choose(survivor, ["search (floor[geigerCounter], lockers[flashlight], bodies[aglet])", "go", "look","check", "menu"])
     pass
 
 
-intro()
-survivor = playerSetup()
-# survivor = player.player("Fiona Fernandez")
+# intro()
+# survivor = playerSetup()
+survivor = player.player("Fiona Fernandez")
 vaultSequence()
 game = saveMapGenerator.map(survivor)
 
 # endings:
-# time capsule
-# deep sleep a la futurama
-# find true love and settle down
-# die
-# suicide
-# die from radiation
-# buy a casino
-# make a deal with the devil
-#   become a mutant
-# roaches take over
+#   time capsule
+#   deep sleep a la futurama
+#   find true love and settle down
+#   die
+#   suicide
+#   die from radiation
+#   buy a casino
+#   make a deal with the devil
+#     become a mutant
+#   roaches take over
 
 # ideas:
-# fake difficulty slider
-# aglets as currency
-# stickers you find on fruit as currency
-# burn down a city
-# roach boss
-# ability to consume every object ranging from hp gain to death (suicide)
-# save system via json
+#   fake difficulty slider
+#   aglets as currency
+#   stickers you find on fruit as currency
+#   burn down a city
+#   roach boss
+#   ability to consume every object ranging from hp gain to death (suicide)
+#   save system via json

@@ -32,7 +32,6 @@ class player:
         pass
 
     def showStats(self):
-        flow.newLine()
         print("Sure, here you go.")
         flow.sleep()
         print(f'- Your name: {self.name}')
@@ -40,11 +39,9 @@ class player:
         print(f'- Radiation exposure: {self.radiation} rads/min')
         print(f'- Armor: {self.armor}')
         print(f'- Speed: {self.speed}')
-        flow.newLine()
         pass
 
     def showInventory(self):
-        flow.newLine()
         print("Sure, here you go.")
         flow.sleep()
         for item in self.inventory:

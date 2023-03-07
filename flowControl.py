@@ -28,7 +28,7 @@ class flow:
         flow.input("[Press enter to continue]")
         pass
 
-    def choose(player, *options):
+    def choose(player, options,):
         result = None
         options = list(options)
 
@@ -72,8 +72,7 @@ class flow:
                 print("Save failed!")
                 return
             if quit == True:
-                SystemExit
-            return
+                return SystemExit
 
         def showCheck():
             print("Check what?")
@@ -123,7 +122,7 @@ class flow:
             pass
 
         def showLook():
-            
+
             pass
 
         def showGo():
@@ -133,27 +132,33 @@ class flow:
         def findKeyword():
             rawInput = flow.input("I want to... ")
             flow.newLine()
-            flow.sleep()
 
             if "chec" and "inve" in rawInput:
+                flow.sleep()
                 player.showInventory()
-                return None
+                return flow.choose(player, options)
             elif "chec" and "stat" in rawInput:
+                flow.sleep()
                 player.showStats()
-                return None
+                return flow.choose(player, options)
             elif "chec" in rawInput:
+                flow.sleep()
                 showCheck()
-                return None
+                return flow.choose(player, options)
             elif "menu" in rawInput:
+                flow.sleep()
                 showMenu()
-                return None
+                return flow.choose(player, options)
             elif "sear" in rawInput:
+                flow.sleep()
                 showSearch()
-                return None
+                return flow.choose(player, options)
             elif "look" in rawInput:
+                flow.sleep()
                 showLook()
-                return None
+                return flow.choose(player, options)
             elif "go" in rawInput:
+                flow.sleep()
                 showGo()
                 return None
 

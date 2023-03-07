@@ -2,6 +2,7 @@ import time
 import re
 import json
 config = json.load(open("config.json"))
+items = json.load(open("items.json"))
 
 
 class flow:
@@ -31,6 +32,9 @@ class flow:
         result = None
         options = list(options)
 
+        flow.newLine()
+        flow.sleep()
+
         print("What do you do?")
 
         for option in options:
@@ -56,8 +60,8 @@ class flow:
         for option in options:
             print("<" + option.title() + ">")
 
-        flow.sleep()
         flow.newLine()
+        flow.sleep()
 
         def saveAndQuitGame(save=False, quit=False):
             if save == True:
@@ -136,8 +140,9 @@ class flow:
             response = flow.input("I want to search the... ")
             
             for place in searchTable:
-                # player pick up item if place name (first two letters) in response then player pickup that item and maybe remove or boolean check for if you have already found that item
-                pass
+                if place[:3] in response:
+                    player.pickUp(items[searchTable[place]])
+                    # break
             pass
 
         def showLook():

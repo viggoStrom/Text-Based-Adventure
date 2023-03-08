@@ -76,10 +76,12 @@ class flow:
 
         def showCheck():
             print("Check what?")
-            print("<Inventory> <Stats>")
+            print("<Inventory> <Stats> <Back>")
             flow.newLine()
             response = flow.input("...")
-            if ("in" or "nv") in response:
+            if "bac" in response:
+                return flow.choose(player, options)
+            elif ("in" or "nv") in response:
                 player.showInventory()
             elif ("st" or "at") in response:
                 player.showStats()
@@ -87,10 +89,12 @@ class flow:
 
         def showMenu():
             print("What do you want to do?")
-            print("<Save> <Quit> <Save & Quit>")
+            print("<Save> <Quit> <Save & Quit> <Back>")
             flow.newLine()
             response = flow.input("... ")
-            if ("qui" and "sav") in response:
+            if "bac" in response:
+                return flow.choose(player, options)
+            elif ("qui" and "sav") in response:
                 saveAndQuitGame(save=True, quit=True)
                 pass
             elif "sav" in response:
@@ -99,7 +103,7 @@ class flow:
             elif "qui" in response:
                 saveAndQuitGame(quit=True)
                 pass
-            pass
+            return
 
         def showSearch():
             for option in options:
@@ -111,22 +115,17 @@ class flow:
             searchOptions = ""
             for element in searchablePlaces:
                 searchOptions += f"<{str(element).title()}> "
-            print(searchOptions)
+            print(searchOptions + "<Back>")
             flow.newLine()
 
             response = flow.input("I want to search the... ")
             
+            if "bac" in response:
+                return flow.choose(player, options)
+
             for place in searchTable:
                 if place[:3] in response:
                     player.pickUp(items[searchTable[place]])
-            pass
-
-        def showLook():
-
-            pass
-
-        def showGo():
-
             pass
 
         def findKeyword():
@@ -145,22 +144,21 @@ class flow:
                 flow.sleep()
                 showCheck()
                 return flow.choose(player, options)
-            elif "menu" in rawInput:
-                flow.sleep()
-                showMenu()
-                return flow.choose(player, options)
             elif "sear" in rawInput:
                 flow.sleep()
                 showSearch()
+                return flow.choose(player, options)
+            elif "go" in rawInput:
+                flow.sleep()
+                showGo()
                 return flow.choose(player, options)
             elif "look" in rawInput:
                 flow.sleep()
                 showLook()
                 return flow.choose(player, options)
-            elif "go" in rawInput:
+            elif "menu" in rawInput:
                 flow.sleep()
-                showGo()
-                return None
+                return showMenu()
 
             print("Please rephrase that.")
             flow.newLine()

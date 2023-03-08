@@ -7,7 +7,7 @@
             ],
             "enemies": [],
             "radiationLevel": 50,
-            "loot": []
+            "loot": {}
         }
     ],
     "player": {}

@@ -33,7 +33,7 @@ def intro():
     pass
 
 
-def playerSetup():
+def playerSetup(game):
     flow.newLine()
     print("Welcome to the post-apocalyptic wasteland. Before we begin, what is your name?")
     flow.newLine()
@@ -55,7 +55,7 @@ def playerSetup():
         name = random.choice(randomNames)
         pass
 
-    survivor = player.player(name)
+    survivor = player.player(name, game)
 
     flow.sleep()
 
@@ -78,10 +78,10 @@ def vaultSequence():
 
 
 # intro()
-# survivor = playerSetup()
-survivor = player.player("Fiona Fernandez")
+game = saveMapGenerator.map()
+survivor = playerSetup(game)
+# survivor = player.player("Fiona Fernandez") # for debug purposes
 vaultSequence()
-game = saveMapGenerator.map(survivor)
 
 # endings:
 #   time capsule

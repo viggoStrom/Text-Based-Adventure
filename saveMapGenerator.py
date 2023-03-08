@@ -31,18 +31,37 @@ class map():
 
             return saveAdress
 
-        saveAdress = generateAdress()
+        self.saveAdress = generateAdress()
 
         try:
-            shutil.copy("saveTemplate.json", saveAdress)
+            shutil.copy("saveTemplate.json", self.saveAdress)
         except:
             print("Error: Files missing... (./saveTemplate.json)")
             SystemExit
 
-        save = json.load(open(saveAdress))
+        # code that saves a value to json
+        save = json.load(open(self.saveAdress))
         save["player"]["position"] = survivor.position
-        json.dump(save, open(saveAdress, "w"))
+        json.dump(save, open(self.saveAdress, "w"))
         pass
 
-    def generateRoom(cardinalDirection):
+    def generateRoom(self, cardinalDirection):
+        save = json.load(open(self.saveAdress))
+
+        cardinalDirection = cardinalDirection.lower()
+        if cardinalDirection == "origin":
+
+            save["player"]["position"] = self.survivor.position        
+    
+            pass
+        elif "nor" in cardinalDirection:
+            pass
+        elif "sou" in cardinalDirection:
+            pass
+        elif "eas" in cardinalDirection:
+            pass
+        elif "wes" in cardinalDirection:
+            pass
+
+        json.dump(save, open(self.saveAdress, "w"))
         pass

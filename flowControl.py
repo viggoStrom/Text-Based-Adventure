@@ -150,11 +150,11 @@ class flow:
                 return flow.choose(player, options)
             elif "go" in rawInput:
                 flow.sleep()
-                showGo()
+                player.go()
                 return flow.choose(player, options)
             elif "look" in rawInput:
                 flow.sleep()
-                showLook()
+                player.look()
                 return flow.choose(player, options)
             elif "menu" in rawInput:
                 flow.sleep()

@@ -51,7 +51,8 @@ class map():
         cardinalDirection = cardinalDirection.lower()
         if cardinalDirection == "origin":
 
-            save["player"]["position"] = self.survivor.position        
+            save["rooms"].append(save["rooms"][0]["loot"])
+            save["rooms"]
     
             pass
         elif "nor" in cardinalDirection:

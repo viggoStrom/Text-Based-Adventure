@@ -19,6 +19,8 @@ class player:
             "body": {},
         }
         self.position = [0, 0]
+
+        self.map.generateRoom("origin")
         pass
 
     def pickUp(self, item):
@@ -53,10 +55,8 @@ class player:
                 print(" - " + item["name"][0])
         pass
 
-    def look():
-        
+    def look(self):
         pass
 
-    def go():
-
+    def go(self):
         pass

@@ -1,5 +1,45 @@
-#mapGrid{
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px black solid;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#mapGrid {
+    margin: 0;
+    padding: 0;
+
+    /* exact size set in js */
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto ;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto ;
+    grid-template-columns: auto; 
+    grid-template-rows: auto;
+    
+    height: 90vh;
+    aspect-ratio: 1/1;
 }

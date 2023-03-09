@@ -19,7 +19,6 @@ header {
     align-items: center;
     justify-content: center;
 
-    border-bottom: 1px black solid;
 }
 
 section {
@@ -28,7 +27,7 @@ section {
     align-items: center;
     justify-content: center;
 
-
+    height: 100%;
 }
 
 #mapGrid {
@@ -42,4 +41,8 @@ section {
     
     height: 90vh;
     aspect-ratio: 1/1;
+}
+
+.mapSquare {
+    border: 1px solid black;
 }

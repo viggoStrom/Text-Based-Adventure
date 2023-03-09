@@ -73,14 +73,14 @@ def vaultSequence():
 
     survivor.pickUp(item["knife"])
 
-    flow.choose(survivor, ["search (floor[geigerCounter], lockers[flashlight], bodies[aglet])", "go", "look","check", "menu"])
+    flow.choose(survivor, ["go", "look","check", "menu"])
     pass
 
 
 # intro()
-game = saveMapGenerator.map()
-survivor = playerSetup(game)
 # survivor = player.player("Fiona Fernandez") # for debug purposes
+survivor = playerSetup()
+game = saveMapGenerator.map(survivor)
 vaultSequence()
 
 # endings:

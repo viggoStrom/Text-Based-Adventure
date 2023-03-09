@@ -5,8 +5,7 @@ flow = flowControl.flow
 
 
 class player:
-    def __init__(self, name, map):
-        self.map = map
+    def __init__(self, name):
         self.name = name
         self.inventory = []
         self.health = 100
@@ -19,8 +18,6 @@ class player:
             "body": {},
         }
         self.position = [0, 0]
-
-        self.map.generateRoom("origin")
         pass
 
     def pickUp(self, item):

@@ -39,30 +39,8 @@ class map():
             print("Error: Files missing... (./saveTemplate.json)")
             SystemExit
 
-        # code that saves a value to json
+        # code that writes to json
         save = json.load(open(self.saveAdress))
         save["player"]["position"] = survivor.position
-        json.dump(save, open(self.saveAdress, "w"))
-        pass
-
-    def generateRoom(self, cardinalDirection):
-        save = json.load(open(self.saveAdress))
-
-        cardinalDirection = cardinalDirection.lower()
-        if cardinalDirection == "origin":
-
-            save["rooms"].append(save["rooms"][0]["loot"])
-            save["rooms"]
-    
-            pass
-        elif "nor" in cardinalDirection:
-            pass
-        elif "sou" in cardinalDirection:
-            pass
-        elif "eas" in cardinalDirection:
-            pass
-        elif "wes" in cardinalDirection:
-            pass
-
         json.dump(save, open(self.saveAdress, "w"))
         pass

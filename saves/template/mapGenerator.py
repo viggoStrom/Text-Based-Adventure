@@ -16,6 +16,7 @@ else:
             map["rooms"][f'x{x}y{y}'] = {}
             room = map["rooms"][f'x{x}y{y}']
 
+            room["name"] = ""
             room["coordinate"] = [x, y]
             room["loot"] = {}
             room["allowedDirections"] = {

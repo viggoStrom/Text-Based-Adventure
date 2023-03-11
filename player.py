@@ -1,8 +1,5 @@
 import flowControl
-import json
-config = json.load(open("config.json"))
 flow = flowControl.flow
-
 
 class player:
     def __init__(self, name):

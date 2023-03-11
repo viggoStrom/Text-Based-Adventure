@@ -1,9 +1,10 @@
 import random
+import shutil
 
 import player
+import gameManager
 import flowControl
 flow = flowControl.flow
-import saveMapGenerator
 
 import json
 item = json.load(open("items.json"))
@@ -33,7 +34,7 @@ def intro():
     pass
 
 
-def playerSetup(game):
+def playerSetup():
     flow.newLine()
     print("Welcome to the post-apocalyptic wasteland. Before we begin, what is your name?")
     flow.newLine()
@@ -55,7 +56,7 @@ def playerSetup(game):
         name = random.choice(randomNames)
         pass
 
-    survivor = player.player(name, game)
+    survivor = player.player(name)
 
     flow.sleep()
 
@@ -77,10 +78,9 @@ def vaultSequence():
     pass
 
 
-# intro()
-# survivor = player.player("Fiona Fernandez") # for debug purposes
+intro()
 survivor = playerSetup()
-game = saveMapGenerator.map(survivor)
+map = gameManager.map(survivor)
 vaultSequence()
 
 # endings:

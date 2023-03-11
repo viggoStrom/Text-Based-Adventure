@@ -1,48 +1,71 @@
 import json
+import math
 
 if input("Sure you wanna regenerate the map template? y/n \n ...") != "y":
     SystemExit
 else:
     print("ok")
 
-    map = json.load(open("saves/template/map.json"))
-
     columns = 9
     rows = 9
 
-    map = {"rooms": {}}
-    for y in range(0, rows):
-        for x in range(0, columns):
-            map["rooms"][f'x{x}y{y}'] = {}
-            room = map["rooms"][f'x{x}y{y}']
+    map = json.load(open("saves/template/map.json"))
 
-            room["name"] = ""
-            room["coordinate"] = [x, y]
-            room["loot"] = {}
-            room["allowedDirections"] = {
-                "north": True,
-                "south": True,
-                "west": True,
-                "east": True
-            }
-            room["look"] = {
+    map = {"rooms": {}, "meta": {}}
+
+    map["meta"] = {
+        "rows": rows,
+        "columns": columns,
+        "template": {
+            "name": "",
+            "coordinates": [0, 0],
+            "loot": {},
+            "look": {
                 "north": "",
                 "south": "",
                 "west": "",
                 "east": ""
-            }
-            room["enemies"] = {}
-            room["radiation"] = 0
-
-            pass
-
-    map["meta"] = {
-        "rows": rows,
-        "columns": columns
+            },
+            "allowedDirections": {
+                "north": True,
+                "south": True,
+                "west": True,
+                "east": True
+            },
+            "enemies": {},
+            "radiation": 0
+        }
     }
 
-    startRoom = map["rooms"]["x4y4"]
-    startRoom["loot"] = {
+    for y in range(0, rows):
+        for x in range(0, columns):
+            map["rooms"][f'x{x}y{y}'] = {}
+            map["rooms"][f'x{x}y{y}'] = map["meta"]["template"]
+            pass
+        pass
+        # room["name"] = ""
+        # room["coordinate"] = [x, y]
+        # room["loot"] = {}
+        # room["allowedDirections"] = {
+        #     "north": True,
+        #     "south": True,
+        #     "west": True,
+        #     "east": True
+        # }
+        # room["look"] = {
+        #     "north": "",
+        #     "south": "",
+        #     "west": "",
+        #     "east": ""
+        # }
+        # room["enemies"] = {}
+        # room["radiation"] = 0
+
+    # f'x{int(math.floor(columns-1)/2)}y{int(math.floor(rows-1)/2)}'
+    json.dump(map, open("saves/template/map.json", "w"))
+    map = json.load(open("saves/template/map.json"))
+
+    map["rooms"]["x4y4"]["loot"] = {
         "floor": "geigerCounter",
         "lockers": "flashlight",
         "bodies": [
@@ -51,13 +74,13 @@ else:
             "aglet"
         ]
     }
-    startRoom["allowedDirections"] = {
+    map["rooms"]["x4y4"]["allowedDirections"] = {
         "north": True,
         "south": False,
         "west": False,
         "east": False
     }
-    startRoom["look"] = {
+    map["rooms"]["x4y4"]["look"] = {
         "north": "the vault door",
         "south": "a wall",
         "west": "a wall",

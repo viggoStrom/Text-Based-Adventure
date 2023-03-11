@@ -1,1 +1,1820 @@
-{"rooms": {"x0y0": {"name": "", "coordinate": [0, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y0": {"name": "", "coordinate": [1, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y0": {"name": "", "coordinate": [2, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y0": {"name": "", "coordinate": [3, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y0": {"name": "", "coordinate": [4, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y0": {"name": "", "coordinate": [5, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y0": {"name": "", "coordinate": [6, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y0": {"name": "", "coordinate": [7, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y0": {"name": "", "coordinate": [8, 0], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y1": {"name": "", "coordinate": [0, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y1": {"name": "", "coordinate": [1, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y1": {"name": "", "coordinate": [2, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y1": {"name": "", "coordinate": [3, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y1": {"name": "", "coordinate": [4, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y1": {"name": "", "coordinate": [5, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y1": {"name": "", "coordinate": [6, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y1": {"name": "", "coordinate": [7, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y1": {"name": "", "coordinate": [8, 1], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y2": {"name": "", "coordinate": [0, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y2": {"name": "", "coordinate": [1, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y2": {"name": "", "coordinate": [2, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y2": {"name": "", "coordinate": [3, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y2": {"name": "", "coordinate": [4, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y2": {"name": "", "coordinate": [5, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y2": {"name": "", "coordinate": [6, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y2": {"name": "", "coordinate": [7, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y2": {"name": "", "coordinate": [8, 2], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y3": {"name": "", "coordinate": [0, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y3": {"name": "", "coordinate": [1, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y3": {"name": "", "coordinate": [2, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y3": {"name": "", "coordinate": [3, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y3": {"name": "", "coordinate": [4, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y3": {"name": "", "coordinate": [5, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y3": {"name": "", "coordinate": [6, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y3": {"name": "", "coordinate": [7, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y3": {"name": "", "coordinate": [8, 3], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y4": {"name": "", "coordinate": [0, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y4": {"name": "", "coordinate": [1, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y4": {"name": "", "coordinate": [2, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y4": {"name": "", "coordinate": [3, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y4": {"name": "", "coordinate": [4, 4], "loot": {"floor": "geigerCounter", "lockers": "flashlight", "bodies": ["aglet", "aglet", "aglet"]}, "allowedDirections": {"north": true, "south": false, "west": false, "east": false}, "look": {"north": "the vault door", "south": "a wall", "west": "a wall", "east": "a wall"}, "enemies": {}, "radiation": 0}, "x5y4": {"name": "", "coordinate": [5, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y4": {"name": "", "coordinate": [6, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y4": {"name": "", "coordinate": [7, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y4": {"name": "", "coordinate": [8, 4], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y5": {"name": "", "coordinate": [0, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y5": {"name": "", "coordinate": [1, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y5": {"name": "", "coordinate": [2, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y5": {"name": "", "coordinate": [3, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y5": {"name": "", "coordinate": [4, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y5": {"name": "", "coordinate": [5, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y5": {"name": "", "coordinate": [6, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y5": {"name": "", "coordinate": [7, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y5": {"name": "", "coordinate": [8, 5], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y6": {"name": "", "coordinate": [0, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y6": {"name": "", "coordinate": [1, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y6": {"name": "", "coordinate": [2, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y6": {"name": "", "coordinate": [3, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y6": {"name": "", "coordinate": [4, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y6": {"name": "", "coordinate": [5, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y6": {"name": "", "coordinate": [6, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y6": {"name": "", "coordinate": [7, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y6": {"name": "", "coordinate": [8, 6], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y7": {"name": "", "coordinate": [0, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y7": {"name": "", "coordinate": [1, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y7": {"name": "", "coordinate": [2, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y7": {"name": "", "coordinate": [3, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y7": {"name": "", "coordinate": [4, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y7": {"name": "", "coordinate": [5, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y7": {"name": "", "coordinate": [6, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y7": {"name": "", "coordinate": [7, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y7": {"name": "", "coordinate": [8, 7], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x0y8": {"name": "", "coordinate": [0, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x1y8": {"name": "", "coordinate": [1, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x2y8": {"name": "", "coordinate": [2, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x3y8": {"name": "", "coordinate": [3, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x4y8": {"name": "", "coordinate": [4, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x5y8": {"name": "", "coordinate": [5, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x6y8": {"name": "", "coordinate": [6, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x7y8": {"name": "", "coordinate": [7, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}, "x8y8": {"name": "", "coordinate": [8, 8], "loot": {}, "allowedDirections": {"north": true, "south": true, "west": true, "east": true}, "look": {"north": "", "south": "", "west": "", "east": ""}, "enemies": {}, "radiation": 0}}, "meta": {"rows": 9, "columns": 9}}
+{
+    "rooms": {
+        "x0y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y0": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y1": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y2": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y3": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {
+                "floor": "geigerCounter",
+                "lockers": "flashlight",
+                "bodies": [
+                    "aglet",
+                    "aglet",
+                    "aglet"
+                ]
+            },
+            "look": {
+                "north": "the vault door",
+                "south": "a wall",
+                "west": "a wall",
+                "east": "a wall"
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": false,
+                "west": false,
+                "east": false
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y4": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y5": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y6": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y7": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x0y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x1y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x2y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x3y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x4y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x5y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x6y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x7y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        },
+        "x8y8": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        }
+    },
+    "meta": {
+        "rows": 9,
+        "columns": 9,
+        "template": {
+            "name": "",
+            "coordinates": [
+                0,
+                0
+            ],
+            "loot": {},
+            "look": {
+                "north": "",
+                "south": "",
+                "west": "",
+                "east": ""
+            },
+            "allowedDirections": {
+                "north": true,
+                "south": true,
+                "west": true,
+                "east": true
+            },
+            "enemies": {},
+            "radiation": 0
+        }
+    }
+}

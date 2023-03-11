@@ -11,7 +11,7 @@ function main(json) {
 
     // setting grid size
 
-    mapGrid = document.getElementById("mapGrid")
+    const mapGrid = document.getElementById("mapGrid")
 
     const gridRows = json.meta.rows
     const gridColumns = json.meta.columns
@@ -39,7 +39,7 @@ function main(json) {
     // populating grid
 
     const coordinates = document.querySelector("aside p:first-of-type")
-    const detailsPanel = document.querySelectorAll("#detailsPanel input")
+    const detailsPanel = document.querySelector("#detailsPanel")
 
     let colors = ["lightGray", "white"]
     let colorBit = 1
@@ -55,6 +55,31 @@ function main(json) {
                 // shows details of square
 
                 coordinates.innerHTML = event.srcElement.id
+
+                detailsPanel.children.forEach((element) => {
+                    element.remove()
+                })
+                const currentSquare = json.rooms[event.srcElement.id]
+
+                for (const [key, value] of Object.entries(currentSquare)) {
+                    const keySpan = document.createElement("span")
+                    const valueSpan = document.createElement("span")
+
+                    keySpan.innerHTML = key + ": "
+                    if (typeof (value) == Object) {
+                        console.log(Object.keys(value));
+                        Object.keys(value).forEach(element => {
+                            console.log(element);
+                            valueSpan.innerHTML += value[element] + ", "
+                        })
+                        keySpan.appendChild(valueSpan)
+                    } else {
+                        keySpan.appendChild(valueSpan)
+                        valueSpan.innerHTML = value
+                    }
+
+                    detailsPanel.appendChild(keySpan)
+                }
 
                 // \shows details of square
             }
@@ -91,4 +116,31 @@ function main(json) {
     })
 
     // \make square borders reflect allowed directions
+
+    // populate details panel
+
+
+    const template = json.meta.template
+
+    for (const [key, value] of Object.entries(template)) {
+        const keySpan = document.createElement("span")
+        const valueSpan = document.createElement("span")
+
+        keySpan.innerHTML = key + ": "
+        if (typeof (value) == Object) {
+            console.log(Object.keys(value));
+            Object.keys(value).forEach(element => {
+                console.log(element);
+                valueSpan.innerHTML += value[element] + ", "
+            })
+            keySpan.appendChild(valueSpan)
+        } else {
+            keySpan.appendChild(valueSpan)
+            valueSpan.innerHTML = value
+        }
+
+        detailsPanel.appendChild(keySpan)
+    }
+
+    // \populate details panel
 }

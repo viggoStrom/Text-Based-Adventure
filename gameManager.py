@@ -2,6 +2,7 @@ import random
 import datetime
 import re
 import shutil
+import json
 
 import flowControl
 flow = flowControl.flow
@@ -35,3 +36,8 @@ class map():
             print("Error: Files missing... (saves/template/map.json)")
             SystemExit
         pass
+
+        # code that writes to json
+        # save = json.load(open(self.saveAdress))
+        # save["player"]["position"] = player.position
+        # json.dump(save, open(self.saveAdress, "w"))

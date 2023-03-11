@@ -1,6 +1,7 @@
 import flowControl
 flow = flowControl.flow
 
+
 class player:
     def __init__(self, name):
         self.name = name
@@ -14,7 +15,7 @@ class player:
             "leftHand": {},
             "body": {},
         }
-        self.position = [0, 0]
+        self.position = [4, 4]
         pass
 
     def pickUp(self, item):

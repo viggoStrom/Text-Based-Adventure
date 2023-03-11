@@ -23,11 +23,30 @@ header {
 
 section {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
     height: 100%;
+}
+
+aside {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 90vh;
+}
+
+aside p:first-of-type {}
+
+#detailsPanel {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#detailsPanel input {
+    margin: .3rem;
+    padding-left: 1rem;
+    max-width: 10vw;
 }
 
 #mapGrid {
@@ -36,13 +55,18 @@ section {
 
     /* exact size set in js */
     display: grid;
-    grid-template-columns: auto; 
+    grid-template-columns: auto;
     grid-template-rows: auto;
-    
+
     height: 90vh;
     aspect-ratio: 1/1;
 }
 
 .mapSquare {
     border: 1px solid black;
+    cursor: pointer;
+}
+
+.mapSquare:hover {
+    scale: 1.3;
 }

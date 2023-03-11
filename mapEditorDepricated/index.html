@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Editor - GESATIG</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>GESATIG Map Editor 1.0</h1>
+    </header>
+
+    <section>
+        <aside>
+            <p>Coordinates</p>
+            <div id="detailsPanel">
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+                <span>Text: <input type="text" value="-"></span>
+            </div>
+        </aside>
+
+        <div id="mapGrid"></div>
+    </section>
+
+    <py-script>
+        from open("mapFiles/map.json") as file:
+            print(file)
+    </py-script>
+
+    <script src="mapFiles/map.json"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

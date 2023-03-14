@@ -19,7 +19,7 @@ else:
         "template": {
             "name": "",
             "coordinates": [0, 0],
-            "loot": {},
+            "loot": [],
             "look": {
                 "north": "",
                 "south": "",
@@ -32,7 +32,7 @@ else:
                 "west": True,
                 "east": True
             },
-            "enemies": {},
+            "enemies": [],
             "radiation": 0
         }
     }
@@ -61,7 +61,6 @@ else:
         # room["enemies"] = {}
         # room["radiation"] = 0
 
-    # f'x{int(math.floor(columns-1)/2)}y{int(math.floor(rows-1)/2)}'
     json.dump(map, open("saves/template/map.json", "w"))
     map = json.load(open("saves/template/map.json"))
 

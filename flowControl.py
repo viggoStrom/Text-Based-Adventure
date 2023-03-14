@@ -3,7 +3,7 @@ import re
 import json
 config = json.load(open("config.json"))
 items = json.load(open("items.json"))
-
+map = json.load(open("saves/template/map.json"))
 
 class flow:
     def __init__(self):
@@ -38,12 +38,16 @@ class flow:
         print("What do you do?")
 
         for option in options:
-            if option.split()[0] == "search":
-                availablePlaces = re.findall(r'(\w+)\[', option)
-                availableItems = re.findall(r'\[([^\]]+)\]', option)
-                searchTable = {w: i for w, i in zip(availablePlaces, availableItems)}
-                
-                options[options.index(option)] = re.sub(r'\[[^\]]*\]', '', option)
+            if option == "search":
+                searchTable = map["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
+                replacementString = "search ("
+                for place in searchTable.keys():
+                    replacementString += place
+                    replacementString += ", "
+                    pass
+                replacementString = replacementString[:-2]
+                replacementString += ")"
+                options[options.index(option)] = replacementString
                 pass
             elif option == "go":
                 options[options.index(option)] = "go (north, south, west, east)"
@@ -106,14 +110,11 @@ class flow:
             return
 
         def showSearch():
-            for option in options:
-                if option.split()[0].lower() == "search":
-                    searchablePlaces = flow.filter(option).split()[1:]
-                    pass
+            lootTable = map["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
 
             print("What do you want to search?")
             searchOptions = ""
-            for element in searchablePlaces:
+            for element in lootTable.keys():
                 searchOptions += f"<{str(element).title()}> "
             print(searchOptions + "<Back>")
             flow.newLine()

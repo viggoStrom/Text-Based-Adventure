@@ -74,11 +74,11 @@ def vaultSequence():
 
     survivor.pickUp(item["knife"])
 
-    flow.choose(survivor, ["go", "look","check", "menu"])
+    flow.choose(survivor, ["search", "go", "look","check", "menu"])
     pass
 
 
-intro()
+# intro()
 survivor = playerSetup()
 map = gameManager.map(survivor)
 vaultSequence()

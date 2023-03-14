@@ -893,7 +893,8 @@
                     "aglet",
                     "aglet",
                     "aglet"
-                ]
+                ],
+                "roof": "item"
             },
             "look": {
                 "north": "the vault door",

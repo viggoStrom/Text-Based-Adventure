@@ -3,7 +3,7 @@ import re
 import json
 config = json.load(open("config.json"))
 items = json.load(open("items.json"))
-map = json.load(open("saves/template/map.json"))
+# save = json.load(open("saves/template/map.json")) get save adress
 
 class flow:
     def __init__(self):
@@ -130,7 +130,7 @@ class flow:
                     player.pickUp(items[lootTable[place]])
                     
                     modifiedMap = map.copy()
-                    del modifiedMap[place]
+                    del modifiedMap["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"][place]
                     json.dump(modifiedMap, open(save.saveAdress, "w"))
                     break
                 pass
@@ -143,19 +143,19 @@ class flow:
             if "chec" and "inve" in rawInput:
                 flow.sleep()
                 player.showInventory()
-                return flow.choose(player, options)
+                return flow.choose(player, save, options)
             elif "chec" and "stat" in rawInput:
                 flow.sleep()
                 player.showStats()
-                return flow.choose(player, options)
+                return flow.choose(player, save, options)
             elif "chec" in rawInput:
                 flow.sleep()
                 showCheck()
-                return flow.choose(player, options)
+                return flow.choose(player, save, options)
             elif "sear" in rawInput:
                 flow.sleep()
                 showSearch()
-                return flow.choose(player, options)
+                return flow.choose(player, save, options)
             elif "go" in rawInput:
                 flow.sleep()
                 player.go()

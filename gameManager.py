@@ -2,7 +2,6 @@ import random
 import datetime
 import re
 import shutil
-import json
 
 import flowControl
 flow = flowControl.flow

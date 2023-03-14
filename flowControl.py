@@ -28,7 +28,7 @@ class flow:
         flow.input("[Press enter to continue]")
         pass
 
-    def choose(player, options,):
+    def choose(player, save, options,):
         result = None
         options = list(options)
 
@@ -124,9 +124,16 @@ class flow:
             if "bac" in response:
                 return flow.choose(player, options)
 
-            for place in searchTable:
+            for place in lootTable.keys():
+                print(place[:3])
                 if place[:3] in response:
-                    player.pickUp(items[searchTable[place]])
+                    player.pickUp(items[lootTable[place]])
+                    
+                    modifiedMap = map.copy()
+                    del modifiedMap[place]
+                    json.dump(modifiedMap, open(save.saveAdress, "w"))
+                    break
+                pass
             pass
 
         def findKeyword():

@@ -3,7 +3,7 @@ import re
 import json
 config = json.load(open("config.json"))
 items = json.load(open("items.json"))
-# save = json.load(open("saves/template/map.json")) get save adress
+
 
 class flow:
     def __init__(self):
@@ -28,18 +28,19 @@ class flow:
         flow.input("[Press enter to continue]")
         pass
 
-    def choose(player, save, options,):
-        result = None
-        options = list(options)
-
-        flow.newLine()
+    def choose(player, saveManager, options):
         flow.sleep()
+        flow.newLine()
 
         print("What do you do?")
 
-        for option in options:
+        optionsCopy = options
+
+        for option in optionsCopy:
             if option == "search":
-                searchTable = map["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
+                searchTable = saveManager.read(
+                )["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
+                print("here")
                 replacementString = "search ("
                 for place in searchTable.keys():
                     replacementString += place
@@ -47,21 +48,25 @@ class flow:
                     pass
                 replacementString = replacementString[:-2]
                 replacementString += ")"
-                options[options.index(option)] = replacementString
+                optionsCopy[optionsCopy.index(option)] = replacementString
                 pass
             elif option == "go":
-                options[options.index(option)] = "go (north, south, west, east)"
+                optionsCopy[optionsCopy.index(
+                    option)] = "go (north, south, west, east)"
                 pass
             elif option == "look":
-                options[options.index(option)] = "look (north, south, west, east)"
+                optionsCopy[optionsCopy.index(
+                    option)] = "look (north, south, west, east)"
                 pass
             elif option == "check":
-                options[options.index(option)] = "check (inventory, stats)"
+                optionsCopy[optionsCopy.index(
+                    option)] = "check (inventory, stats)"
                 pass
             elif option == "menu":
-                options[options.index(option)] = "menu (save, quit, save & quit)"
+                optionsCopy[optionsCopy.index(
+                    option)] = "menu (save, quit, save & quit)"
 
-        for option in options:
+        for option in optionsCopy:
             print("<" + option.title() + ">")
 
         flow.newLine()
@@ -84,7 +89,7 @@ class flow:
             flow.newLine()
             response = flow.input("...")
             if "bac" in response:
-                return flow.choose(player, options)
+                return flow.choose(player, saveManager, options)
             elif ("in" or "nv") in response:
                 player.showInventory()
             elif ("st" or "at") in response:
@@ -97,7 +102,7 @@ class flow:
             flow.newLine()
             response = flow.input("... ")
             if "bac" in response:
-                return flow.choose(player, options)
+                return flow.choose(player, saveManager, options)
             elif ("qui" and "sav") in response:
                 saveAndQuitGame(save=True, quit=True)
                 pass
@@ -109,8 +114,27 @@ class flow:
                 pass
             return
 
-        def showSearch():
-            lootTable = map["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
+        def showSearch(playerInput):
+            playerPosition = f'x{player.position[0]}y{player.position[1]}'
+            lootTable = saveManager.read(
+            )["rooms"][playerPosition]["loot"]
+
+            # check if player already specified a place to search in the player input
+            for place in lootTable.keys():
+                if place[:3] in playerInput:
+                    modifiedMap = saveManager.read().copy()
+                    if isinstance(lootTable[place], list):
+                        lastItem = len(lootTable.keys())-1
+
+                        player.pickUp(items[lootTable[place][lastItem]],newLine=False)
+
+                        del modifiedMap["rooms"][playerPosition]["loot"][place][lastItem]
+                    else:
+                        player.pickUp(items[lootTable[place]], newLine=False)
+                        del modifiedMap["rooms"][playerPosition]["loot"][place]
+
+                    saveManager.write(modifiedMap)
+                    return
 
             print("What do you want to search?")
             searchOptions = ""
@@ -120,51 +144,59 @@ class flow:
             flow.newLine()
 
             response = flow.input("I want to search the... ")
-            
+            flow.sleep()
+
             if "bac" in response:
-                return flow.choose(player, options)
+                return flow.choose(player, saveManager, options)
 
             for place in lootTable.keys():
-                print(place[:3])
                 if place[:3] in response:
-                    player.pickUp(items[lootTable[place]])
-                    
-                    modifiedMap = map.copy()
-                    del modifiedMap["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"][place]
-                    json.dump(modifiedMap, open(save.saveAdress, "w"))
-                    break
+                    modifiedMap = saveManager.read().copy()
+                    if isinstance(lootTable[place], list):
+                        lastItem = len(lootTable)-1
+
+                        player.pickUp(
+                            items[lootTable[place][lastItem]],
+                            newLine=False)
+
+                        del modifiedMap["rooms"][playerPosition]["loot"][place][lastItem]
+                    else:
+                        player.pickUp(items[lootTable[place]], newLine=False)
+                        del modifiedMap["rooms"][playerPosition]["loot"][place]
+
+                    saveManager.write(modifiedMap)
+                    pass
                 pass
             pass
 
         def findKeyword():
-            rawInput = flow.input("I want to... ")
+            playerInput = flow.input("I want to... ")
             flow.newLine()
 
-            if "chec" and "inve" in rawInput:
+            if "chec" and "inve" in playerInput:
                 flow.sleep()
                 player.showInventory()
-                return flow.choose(player, save, options)
-            elif "chec" and "stat" in rawInput:
+                return flow.choose(player, saveManager, options)
+            elif "chec" and "stat" in playerInput:
                 flow.sleep()
                 player.showStats()
-                return flow.choose(player, save, options)
-            elif "chec" in rawInput:
+                return flow.choose(player, saveManager, options)
+            elif "chec" in playerInput:
                 flow.sleep()
                 showCheck()
-                return flow.choose(player, save, options)
-            elif "sear" in rawInput:
-                flow.sleep()
-                showSearch()
-                return flow.choose(player, save, options)
-            elif "go" in rawInput:
+                return flow.choose(player, saveManager, options)
+            elif "sear" in playerInput:
+                showSearch(playerInput)
+                return flow.choose(player, saveManager, options)
+            elif "go" in playerInput:
                 flow.sleep()
                 player.go()
-                return flow.choose(player, options)
-            elif "look" in rawInput:
+                return flow.choose(player, saveManager, options)
+            elif "look" in playerInput:
                 flow.sleep()
                 player.look()
-                return flow.choose(player, options)
-            elif "menu" in rawInput:
+                return flow.choose(player, saveManager, options)
+            elif "menu" in playerInput:
                 flow.sleep()
                 return showMenu()
 

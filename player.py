@@ -18,8 +18,9 @@ class player:
         self.position = [4, 4]
         pass
 
-    def pickUp(self, item):
-        flow.newLine()
+    def pickUp(self, item, newLine=True):
+        if newLine == True:
+            flow.newLine()
         flow.sleep()
         if item not in self.inventory:
             self.inventory.append(item)

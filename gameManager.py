@@ -2,7 +2,7 @@ import random
 import datetime
 import re
 import shutil
-
+import json
 import flowControl
 flow = flowControl.flow
 
@@ -29,14 +29,18 @@ class map():
 
         self.saveAdress = generateAdress()
 
+        templateAdress = "saves/template/map.json"
         try:
-            shutil.copy("saves/template/map.json", self.saveAdress)
+            shutil.copy(templateAdress, self.saveAdress)
         except:
-            print("Error: Files missing... (saves/template/map.json)")
+            print(f"Error: Files missing... ({templateAdress})")
             SystemExit
         pass
 
-        # code that writes to json
-        # save = json.load(open(self.saveAdress))
-        # save["player"]["position"] = player.position
-        # json.dump(save, open(self.saveAdress, "w"))
+
+    def write(self, newData):
+        json.dump(newData, open(self.saveAdress, "w"))
+        pass
+
+    def read(self):
+        return json.load(open(self.saveAdress))

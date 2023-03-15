@@ -1,6 +1,7 @@
 import flowControl
 flow = flowControl.flow
-
+import json
+items = json.load(open("items.json"))
 
 class player:
     def __init__(self, name):
@@ -25,8 +26,8 @@ class player:
         if item not in self.inventory:
             self.inventory.append(item)
             print(f'[You picked up {item["name"][0]}]')
-            if item == item["aglet"]:
-                print("")
+            if item == items["aglet"]:
+                print("PLACEHOLDER (Aglets are currency)")
                 pass
 
         else:
@@ -42,6 +43,7 @@ class player:
         print(f'- Radiation exposure: {self.radiation} rads/min')
         print(f'- Armor: {self.armor}')
         print(f'- Speed: {self.speed}')
+        flow.sleep()
         pass
 
     def showInventory(self):
@@ -58,5 +60,9 @@ class player:
     def look(self):
         pass
 
-    def go(self):
+    def go(self, options):
+        print("Go where?")
+        print(f'<{0}>')
+        flow.newLine()
+        response = flow.input("... ")
         pass

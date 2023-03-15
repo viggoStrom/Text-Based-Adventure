@@ -34,29 +34,41 @@ class flow:
 
         print("What do you do?")
 
-        optionsCopy = options
+        optionsCopy = options.copy()
 
         for option in optionsCopy:
-            if option == "search":
+            if option == None:
+                pass
+            elif option == "search":
                 searchTable = saveManager.read(
                 )["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
-                replacementString = "search ("
-                for place in searchTable.keys():
-                    replacementString += place
-                    replacementString += ", "
+
+                if len(searchTable) != 0:
+                    replacementString = "search ("
+                    for place in searchTable.keys():
+                        replacementString += place
+                        replacementString += ", "
+                        pass
+                    replacementString = replacementString[:-2]
+                    replacementString += ")"
+                    optionsCopy[optionsCopy.index(option)] = replacementString
+                else:
+                    optionsCopy[optionsCopy.index(option)] = None
+                    options[options.index(option)] = None
                     pass
-                replacementString = replacementString[:-2]
-                replacementString += ")"
-                optionsCopy[optionsCopy.index(option)] = replacementString
                 pass
             elif option == "go":
+                allowedDirections = saveManager.read()["rooms"][f'x{player.position[0]}y{player.position[1]}']["allowedDirections"]
+                for cardinalDirection in allowedDirections.keys():
+                    
+                    pass
                 optionsCopy[optionsCopy.index(
                     option)] = "go (north, south, west, east)"
                 pass
-            elif option == "look":
-                optionsCopy[optionsCopy.index(
-                    option)] = "look (north, south, west, east)"
-                pass
+            # elif option == "look":
+            #     optionsCopy[optionsCopy.index(
+            #         option)] = "look (north, south, west, east)"
+            #     pass
             elif option == "check":
                 optionsCopy[optionsCopy.index(
                     option)] = "check (inventory, stats)"
@@ -66,7 +78,8 @@ class flow:
                     option)] = "menu (save, quit, save & quit)"
 
         for option in optionsCopy:
-            print("<" + option.title() + ">")
+            if option != None:
+                print("<" + option.title() + ">")
 
         flow.newLine()
         flow.sleep()
@@ -82,11 +95,19 @@ class flow:
             if quit == True:
                 return SystemExit
 
-        def showCheck():
+        def showCheck(playerInput):
+            if "inv" in playerInput:
+                player.showInventory()
+                return flow.choose(player, saveManager, options)
+            elif "sta" in playerInput:
+                player.showStats()
+                return flow.choose(player, saveManager, options)
+
             print("Check what?")
             print("<Inventory> <Stats> <Back>")
             flow.newLine()
             response = flow.input("...")
+
             if "bac" in response:
                 return flow.choose(player, saveManager, options)
             elif ("in" or "nv") in response:
@@ -156,29 +177,21 @@ class flow:
             playerInput = flow.input("I want to... ")
             flow.newLine()
 
-            if "chec" and "inve" in playerInput:
+            if "chec" in playerInput:
                 flow.sleep()
-                player.showInventory()
-                return flow.choose(player, saveManager, options)
-            elif "chec" and "stat" in playerInput:
-                flow.sleep()
-                player.showStats()
-                return flow.choose(player, saveManager, options)
-            elif "chec" in playerInput:
-                flow.sleep()
-                showCheck()
+                showCheck(playerInput)
                 return flow.choose(player, saveManager, options)
             elif "sear" in playerInput:
                 showSearch(playerInput)
                 return flow.choose(player, saveManager, options)
             elif "go" in playerInput:
                 flow.sleep()
-                player.go()
+                player.go(options)
                 return flow.choose(player, saveManager, options)
-            elif "look" in playerInput:
-                flow.sleep()
-                player.look()
-                return flow.choose(player, saveManager, options)
+            # elif "look" in playerInput:
+            #     flow.sleep()
+            #     player.look()
+            #     return flow.choose(player, saveManager, options)
             elif "menu" in playerInput:
                 flow.sleep()
                 return showMenu()

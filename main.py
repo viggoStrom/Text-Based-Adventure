@@ -1,3 +1,4 @@
+import json
 import random
 
 import player
@@ -5,7 +6,6 @@ import gameManager
 import flowControl
 flow = flowControl.flow
 
-import json
 item = json.load(open("items.json"))
 config = json.load(open("config.json"))
 
@@ -73,14 +73,15 @@ def vaultSequence():
 
     survivor.pickUp(item["knife"])
 
-    flow.choose(survivor, saveManager, ["search", "go", "look","check", "menu"])
+    flow.choose(survivor, saveManager, ["search", "go", "check", "menu"])
     pass
 
 
 # intro()
 survivor = playerSetup()
 saveManager = gameManager.map(survivor)
-vaultSequence()
+# vaultSequence()
+survivor.go(["search", "go", "check", "menu"])
 
 # endings:
 #   time capsule

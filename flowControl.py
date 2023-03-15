@@ -40,7 +40,6 @@ class flow:
             if option == "search":
                 searchTable = saveManager.read(
                 )["rooms"][f'x{player.position[0]}y{player.position[1]}']["loot"]
-                print("here")
                 replacementString = "search ("
                 for place in searchTable.keys():
                     replacementString += place
@@ -123,16 +122,9 @@ class flow:
             for place in lootTable.keys():
                 if place[:3] in playerInput:
                     modifiedMap = saveManager.read().copy()
-                    if isinstance(lootTable[place], list):
-                        lastItem = len(lootTable.keys())-1
 
-                        player.pickUp(items[lootTable[place][lastItem]],newLine=False)
-
-                        del modifiedMap["rooms"][playerPosition]["loot"][place][lastItem]
-                    else:
-                        player.pickUp(items[lootTable[place]], newLine=False)
-                        del modifiedMap["rooms"][playerPosition]["loot"][place]
-
+                    player.pickUp(items[lootTable[place]], newLine=False)
+                    del modifiedMap["rooms"][playerPosition]["loot"][place]
                     saveManager.write(modifiedMap)
                     return
 
@@ -152,18 +144,9 @@ class flow:
             for place in lootTable.keys():
                 if place[:3] in response:
                     modifiedMap = saveManager.read().copy()
-                    if isinstance(lootTable[place], list):
-                        lastItem = len(lootTable)-1
 
-                        player.pickUp(
-                            items[lootTable[place][lastItem]],
-                            newLine=False)
-
-                        del modifiedMap["rooms"][playerPosition]["loot"][place][lastItem]
-                    else:
-                        player.pickUp(items[lootTable[place]], newLine=False)
-                        del modifiedMap["rooms"][playerPosition]["loot"][place]
-
+                    player.pickUp(items[lootTable[place]])
+                    del modifiedMap["rooms"][playerPosition]["loot"][place]
                     saveManager.write(modifiedMap)
                     pass
                 pass

@@ -1,5 +1,4 @@
 import json
-import math
 
 if input("Sure you wanna regenerate the map template? y/n \n ...") != "y":
     SystemExit
@@ -9,7 +8,7 @@ else:
     columns = 9
     rows = 9
 
-    map = json.load(open("saves/template/map.json"))
+    map = json.load(open("saves/template/map.json", "r"))
 
     map = {"rooms": {}, "meta": {}}
 
@@ -62,16 +61,14 @@ else:
         # room["radiation"] = 0
 
     json.dump(map, open("saves/template/map.json", "w"))
-    map = json.load(open("saves/template/map.json"))
+
+
+    map = json.load(open("saves/template/map.json", "r"))
 
     map["rooms"]["x4y4"]["loot"] = {
         "floor": "geigerCounter",
         "lockers": "flashlight",
-        "bodies": [
-            "aglet",
-            "aglet",
-            "aglet"
-        ]
+        "bodies": "aglet"
     }
     map["rooms"]["x4y4"]["allowedDirections"] = {
         "north": True,

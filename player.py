@@ -25,6 +25,10 @@ class player:
         if item not in self.inventory:
             self.inventory.append(item)
             print(f'[You picked up {item["name"][0]}]')
+            if item == item["aglet"]:
+                print("")
+                pass
+
         else:
             self.inventory[self.inventory.index(item)]["quantity"] += 1
             print(f'[You picked up another {item["name"][1]}]')

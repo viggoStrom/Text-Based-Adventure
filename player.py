@@ -20,10 +20,7 @@ class player:
         self.position = [4, 4]
         pass
 
-    def pickUp(self, item, newLine=True):
-        if newLine == True:
-            flow.newLine()
-        flow.sleep()
+    def pickUp(self, item):
         if item not in self.inventory:
             self.inventory.append(item)
             print(f'[You picked up {item["name"][0]}]')
@@ -38,18 +35,15 @@ class player:
 
     def showStats(self):
         print("Sure, here you go.")
-        flow.sleep()
         print(f'- Your name: {self.name}')
         print(f'- Health: {self.health}%')
         print(f'- Radiation exposure: {self.radiation} rads/min')
         print(f'- Armor: {self.armor}')
         print(f'- Speed: {self.speed}')
-        flow.sleep()
         pass
 
     def showInventory(self):
         print("Sure, here you go.")
-        flow.sleep()
         for item in self.inventory:
             if item["quantity"] > 1:
                 print(" - " + str(item["quantity"]
@@ -62,20 +56,35 @@ class player:
         pass
 
     def go(self, saveManager, playerInput):
+        def arrivedAt():
+            nameOfNewRoom = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']["name"]
+            if nameOfNewRoom != "":
+                print(f'You arrived at {nameOfNewRoom}.')
+            else:
+                print("You have arrived.")
+                pass
+
         if "nor" in playerInput:
             self.position[1] -= 1
+            arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
+
         elif "sou" in playerInput:
             self.position[1] += 1
-            pass
+            arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
+            pass
+        
         elif "wes" in playerInput:
+            arrivedAt()
             self.position[0] -= 1
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
+
         elif "eas" in playerInput:
             self.position[0] += 1
+            arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
         pass
@@ -93,7 +102,6 @@ class player:
 
         print("Go where?")
         print(f'<{modifiedString}>')
-        flow.newLine()
         response = flow.input("... ")
 
         if "nor" in response:
@@ -109,4 +117,7 @@ class player:
             self.position[0] += 1
             pass
         pass
+
+        arrivedAt()
+
         flow.choose(self, saveManager, ["search", "go", "check", "menu"])

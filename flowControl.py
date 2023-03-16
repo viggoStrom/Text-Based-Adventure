@@ -4,6 +4,13 @@ import json
 config = json.load(open("config.json"))
 items = json.load(open("items.json"))
 
+# For every funtion that prints and such the structure will be:
+# 
+# CONTENT
+# newline
+# sleep
+# 
+# i.e. trailing newlines and sleep
 
 class flow:
     def __init__(self):
@@ -17,6 +24,10 @@ class flow:
         print("\n")
         pass
 
+    def end():
+        flow.newLine()
+        flow.sleep()
+
     def filter(inputString):
         return re.sub(r"[^a-zA-Z0-9 ]", "", inputString)
 
@@ -24,8 +35,8 @@ class flow:
         return flow.filter(input(prompt)).lower()
 
     def pressEnter():
-        flow.newLine()
         flow.input("[Press enter to continue]")
+        flow.end()
         pass
 
     def choose(player, saveManager, options):

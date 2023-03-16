@@ -29,8 +29,6 @@ class flow:
         pass
 
     def choose(player, saveManager, options):
-        flow.sleep()
-        flow.newLine()
 
         print("What do you do?")
 
@@ -87,9 +85,6 @@ class flow:
             if option != None:
                 print("<" + option.title() + ">")
 
-        flow.newLine()
-        flow.sleep()
-
         def saveAndQuitGame(save=False, quit=False):
             if save == True:
                 # save game here
@@ -111,7 +106,6 @@ class flow:
 
             print("Check what?")
             print("<Inventory> <Stats> <Back>")
-            flow.newLine()
             response = flow.input("...")
 
             if "bac" in response:
@@ -125,7 +119,6 @@ class flow:
         def showMenu():
             print("What do you want to do?")
             print("<Save> <Quit> <Save & Quit> <Back>")
-            flow.newLine()
             response = flow.input("... ")
             if "bac" in response:
                 return flow.choose(player, saveManager, options)
@@ -160,10 +153,8 @@ class flow:
             for element in lootTable.keys():
                 searchOptions += f"<{str(element).title()}> "
             print(searchOptions + "<Back>")
-            flow.newLine()
 
             response = flow.input("I want to search the... ")
-            flow.sleep()
 
             if "bac" in response:
                 return flow.choose(player, saveManager, options)
@@ -181,30 +172,23 @@ class flow:
 
         def findKeyword():
             playerInput = flow.input("I want to... ")
-            flow.newLine()
 
             if "chec" in playerInput:
-                flow.sleep()
                 showCheck(playerInput)
                 return flow.choose(player, saveManager, options)
+
             elif "sear" in playerInput:
                 showSearch(playerInput)
                 return flow.choose(player, saveManager, options)
+
             elif "go" in playerInput:
-                flow.sleep()
-                player.go(saveManager)
+                player.go(saveManager, playerInput)
                 return flow.choose(player, saveManager, options)
-            # elif "look" in playerInput:
-            #     flow.sleep()
-            #     player.look()
-            #     return flow.choose(player, saveManager, options)
+
             elif "menu" in playerInput:
-                flow.sleep()
                 return showMenu()
 
             print("Please rephrase that.")
-            flow.newLine()
-            flow.sleep()
             findKeyword()
 
         return findKeyword()

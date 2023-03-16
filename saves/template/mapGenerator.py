@@ -19,12 +19,12 @@ else:
             "name": "",
             "coordinates": [0, 0],
             "loot": [],
-            "look": {
-                "north": "",
-                "south": "",
-                "west": "",
-                "east": ""
-            },
+            # "look": {
+            #     "north": "",
+            #     "south": "",
+            #     "west": "",
+            #     "east": ""
+            # },
             "allowedDirections": {
                 "north": True,
                 "south": True,
@@ -32,7 +32,7 @@ else:
                 "east": True
             },
             "enemies": [],
-            "radiation": 0
+            # "radiation": 0
         }
     }
 
@@ -62,9 +62,9 @@ else:
 
     json.dump(map, open("saves/template/map.json", "w"))
 
-
     map = json.load(open("saves/template/map.json", "r"))
 
+    map["rooms"]["x4y4"]["name"] = "the vault"
     map["rooms"]["x4y4"]["loot"] = {
         "floor": "geigerCounter",
         "lockers": "flashlight",
@@ -76,11 +76,34 @@ else:
         "west": False,
         "east": False
     }
-    map["rooms"]["x4y4"]["look"] = {
-        "north": "the vault door",
-        "south": "a wall",
-        "west": "a wall",
-        "east": "a wall"
-    }
+    # map["rooms"]["x4y4"]["look"] = {
+    #     "north": "the vault door",
+    #     "south": "a wall",
+    #     "west": "a wall",
+    #     "east": "a wall"
+    # }
+
+    json.dump(map, open("saves/template/map.json", "w"))
+
+    map = json.load(open("saves/template/map.json", "r"))
+
+    maxX = map["meta"]["rows"]
+    maxY = map["meta"]["columns"]
+
+    for room in map["rooms"].keys():
+        x = int(room[1])
+        y = int(room[3])
+        if x == 0:
+            map["rooms"][room]["allowedDirections"]["west"] = False
+            pass
+        elif x == maxX-1:
+            map["rooms"][room]["allowedDirections"]["east"] = False
+            pass
+        if y == 0:
+            map["rooms"][room]["allowedDirections"]["north"] = False
+            pass
+        elif y == maxY-1:
+            map["rooms"][room]["allowedDirections"]["south"] = False
+            pass
 
     json.dump(map, open("saves/template/map.json", "w"))

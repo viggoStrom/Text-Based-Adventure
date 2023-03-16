@@ -3,9 +3,6 @@ import datetime
 import re
 import shutil
 import json
-import flowControl
-flow = flowControl.flow
-
 
 class map():
     def __init__(self, player):

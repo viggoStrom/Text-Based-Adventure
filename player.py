@@ -61,7 +61,25 @@ class player:
     def look(self):
         pass
 
-    def go(self, saveManager):
+    def go(self, saveManager, playerInput):
+        if "nor" in playerInput:
+            self.position[1] -= 1
+            flow.choose(self, saveManager, ["search", "go", "check", "menu"])
+            pass
+        elif "sou" in playerInput:
+            self.position[1] += 1
+            pass
+            flow.choose(self, saveManager, ["search", "go", "check", "menu"])
+        elif "wes" in playerInput:
+            self.position[0] -= 1
+            flow.choose(self, saveManager, ["search", "go", "check", "menu"])
+            pass
+        elif "eas" in playerInput:
+            self.position[0] += 1
+            flow.choose(self, saveManager, ["search", "go", "check", "menu"])
+            pass
+        pass
+
         allowedDirections = saveManager.read(
         )["rooms"][f'x{self.position[0]}y{self.position[1]}']["allowedDirections"]
         modifiedString = ""
@@ -79,5 +97,16 @@ class player:
         response = flow.input("... ")
 
         if "nor" in response:
+            self.position[1] -= 1
+            pass
+        elif "sou" in response:
+            self.position[1] += 1
+            pass
+        elif "wes" in response:
+            self.position[0] -= 1
+            pass
+        elif "eas" in response:
+            self.position[0] += 1
             pass
         pass
+        flow.choose(self, saveManager, ["search", "go", "check", "menu"])

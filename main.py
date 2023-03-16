@@ -19,7 +19,6 @@ def intro():
         print("██║   ██║██╔══╝  ╚════██║██╔══██║   ██║   ██║██║   ██║")
         print("╚██████╔╝███████╗███████║██║  ██║   ██║   ██║╚██████╔╝")
         print(" ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ")
-        flow.newLine()
         pass
 
     def exposition():
@@ -28,15 +27,12 @@ def intro():
         pass
 
     logo()
-    flow.sleep()
     exposition()
     pass
 
 
 def playerSetup():
-    flow.newLine()
     print("Welcome to the post-apocalyptic wasteland. Before we begin, what is your name?")
-    flow.newLine()
 
     name = flow.input("My name is... ").title()
     if name == "":
@@ -57,9 +53,6 @@ def playerSetup():
 
     survivor = player.player(name)
 
-    flow.sleep()
-
-    flow.newLine()
     print(
         f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
     return survivor
@@ -67,7 +60,6 @@ def playerSetup():
 
 def vaultSequence():
     flow.pressEnter()
-    flow.newLine()
 
     print("You slowly open your eyes, feeling groggy and disoriented. As your senses slowly come back to you, you hear the familiar sound of Geiger counters going wild in the background. You look down to see a knife in your hand, but you have no idea how you got here, or what happened. You seem to be in a vault of some sort, but everything is hazy and confusing.")
 
@@ -77,11 +69,10 @@ def vaultSequence():
     pass
 
 
-# intro()
+intro()
 survivor = playerSetup()
 saveManager = gameManager.map(survivor)
-# vaultSequence()
-survivor.go(saveManager)
+vaultSequence()
 
 # endings:
 #   time capsule

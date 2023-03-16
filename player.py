@@ -1,7 +1,8 @@
+import json
 import flowControl
 flow = flowControl.flow
-import json
 items = json.load(open("items.json"))
+
 
 class player:
     def __init__(self, name):
@@ -60,9 +61,23 @@ class player:
     def look(self):
         pass
 
-    def go(self, options):
+    def go(self, saveManager):
+        allowedDirections = saveManager.read(
+        )["rooms"][f'x{self.position[0]}y{self.position[1]}']["allowedDirections"]
+        modifiedString = ""
+        for cardinalDirection in allowedDirections.keys():
+            if allowedDirections[cardinalDirection] == True:
+                modifiedString += cardinalDirection
+                modifiedString += " "
+                pass
+            pass
+        modifiedString = modifiedString[:-1]
+
         print("Go where?")
-        print(f'<{0}>')
+        print(f'<{modifiedString}>')
         flow.newLine()
         response = flow.input("... ")
+
+        if "nor" in response:
+            pass
         pass

@@ -58,12 +58,18 @@ class flow:
                     pass
                 pass
             elif option == "go":
-                allowedDirections = saveManager.read()["rooms"][f'x{player.position[0]}y{player.position[1]}']["allowedDirections"]
+                allowedDirections = saveManager.read(
+                )["rooms"][f'x{player.position[0]}y{player.position[1]}']["allowedDirections"]
+                modifiedString = "go ("
                 for cardinalDirection in allowedDirections.keys():
-                    
+                    if allowedDirections[cardinalDirection] == True:
+                        modifiedString += cardinalDirection
+                        modifiedString += ", "
+                        pass
                     pass
-                optionsCopy[optionsCopy.index(
-                    option)] = "go (north, south, west, east)"
+                modifiedString = modifiedString[:-2]
+                modifiedString += ")"
+                optionsCopy[optionsCopy.index(option)] = modifiedString
                 pass
             # elif option == "look":
             #     optionsCopy[optionsCopy.index(
@@ -186,7 +192,7 @@ class flow:
                 return flow.choose(player, saveManager, options)
             elif "go" in playerInput:
                 flow.sleep()
-                player.go(options)
+                player.go(saveManager)
                 return flow.choose(player, saveManager, options)
             # elif "look" in playerInput:
             #     flow.sleep()

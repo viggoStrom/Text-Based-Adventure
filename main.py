@@ -81,7 +81,7 @@ def vaultSequence():
 survivor = playerSetup()
 saveManager = gameManager.map(survivor)
 # vaultSequence()
-survivor.go(["search", "go", "check", "menu"])
+survivor.go(saveManager)
 
 # endings:
 #   time capsule

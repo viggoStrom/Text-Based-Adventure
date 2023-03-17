@@ -5,12 +5,13 @@ config = json.load(open("config.json"))
 items = json.load(open("items.json"))
 
 # For every funtion that prints and such the structure will be:
-# 
+#
 # CONTENT
 # newline
 # sleep
-# 
+#
 # i.e. trailing newlines and sleep
+
 
 class flow:
     def __init__(self):
@@ -24,7 +25,7 @@ class flow:
         print("\n")
         pass
 
-    def end():
+    def newLineSleep():
         flow.newLine()
         flow.sleep()
 
@@ -36,10 +37,99 @@ class flow:
 
     def pressEnter():
         flow.input("[Press enter to continue]")
-        flow.end()
+        flow.newLineSleep()
         pass
 
     def choose(player, saveManager, options):
+        def saveAndQuitGame(save=False, quit=False):
+            if save == True:
+                # save game here
+                flow.sleep()
+                print("Saving game...")
+                flow.sleep()
+                print("Save failed!")
+                return
+            if quit == True:
+                return SystemExit
+
+        def showCheck(playerInput):
+            if "inv" in playerInput:
+                player.showInventory()
+                return flow.choose(player, saveManager, options)
+            elif "sta" in playerInput:
+                player.showStats()
+                return flow.choose(player, saveManager, options)
+
+            print("Check what?")
+            print("<Inventory> <Stats> <Back>")
+            flow.newLineSleep()
+            
+            response = flow.input("...")
+            flow.newLineSleep()
+
+            if "bac" in response:
+                return flow.choose(player, saveManager, options)
+            elif ("in" or "nv") in response:
+                player.showInventory()
+            elif ("st" or "at") in response:
+                player.showStats()
+            pass
+
+        def showMenu():
+            print("What do you want to do?")
+            print("<Save> <Quit> <Save & Quit> <Back>")
+            response = flow.input("... ")
+            if "bac" in response:
+                return flow.choose(player, saveManager, options)
+            elif ("qui" and "sav") in response:
+                saveAndQuitGame(save=True, quit=True)
+                pass
+            elif "sav" in response:
+                saveAndQuitGame(save=True)
+                pass
+            elif "qui" in response:
+                saveAndQuitGame(quit=True)
+                pass
+            return
+
+        def showSearch(playerInput):
+            playerPosition = f'x{player.position[0]}y{player.position[1]}'
+            lootTable = saveManager.read(
+            )["rooms"][playerPosition]["loot"]
+
+            # check if player already specified a place to search in the player input
+            for place in lootTable.keys():
+                if place[:3] in playerInput:
+                    modifiedMap = saveManager.read().copy()
+
+                    player.pickUp(items[lootTable[place]])
+                    del modifiedMap["rooms"][playerPosition]["loot"][place]
+                    saveManager.write(modifiedMap)
+                    return
+
+            print("What do you want to search?")
+            searchOptions = ""
+            for element in lootTable.keys():
+                searchOptions += f"<{str(element).title()}> "
+            print(searchOptions + "<Back>")
+            flow.newLineSleep()
+
+            response = flow.input("I want to search the... ")
+            flow.newLineSleep()
+
+            if "bac" in response:
+                return flow.choose(player, saveManager, options)
+
+            for place in lootTable.keys():
+                if place[:3] in response:
+                    modifiedMap = saveManager.read().copy()
+
+                    player.pickUp(items[lootTable[place]])
+                    del modifiedMap["rooms"][playerPosition]["loot"][place]
+                    saveManager.write(modifiedMap)
+                    pass
+                pass
+            pass
 
         print("What do you do?")
 
@@ -80,10 +170,6 @@ class flow:
                 modifiedString += ")"
                 optionsCopy[optionsCopy.index(option)] = modifiedString
                 pass
-            # elif option == "look":
-            #     optionsCopy[optionsCopy.index(
-            #         option)] = "look (north, south, west, east)"
-            #     pass
             elif option == "check":
                 optionsCopy[optionsCopy.index(
                     option)] = "check (inventory, stats)"
@@ -95,94 +181,11 @@ class flow:
         for option in optionsCopy:
             if option != None:
                 print("<" + option.title() + ">")
-
-        def saveAndQuitGame(save=False, quit=False):
-            if save == True:
-                # save game here
-                flow.sleep()
-                print("Saving game...")
-                flow.sleep()
-                print("Save failed!")
-                return
-            if quit == True:
-                return SystemExit
-
-        def showCheck(playerInput):
-            if "inv" in playerInput:
-                player.showInventory()
-                return flow.choose(player, saveManager, options)
-            elif "sta" in playerInput:
-                player.showStats()
-                return flow.choose(player, saveManager, options)
-
-            print("Check what?")
-            print("<Inventory> <Stats> <Back>")
-            response = flow.input("...")
-
-            if "bac" in response:
-                return flow.choose(player, saveManager, options)
-            elif ("in" or "nv") in response:
-                player.showInventory()
-            elif ("st" or "at") in response:
-                player.showStats()
-            pass
-
-        def showMenu():
-            print("What do you want to do?")
-            print("<Save> <Quit> <Save & Quit> <Back>")
-            response = flow.input("... ")
-            if "bac" in response:
-                return flow.choose(player, saveManager, options)
-            elif ("qui" and "sav") in response:
-                saveAndQuitGame(save=True, quit=True)
-                pass
-            elif "sav" in response:
-                saveAndQuitGame(save=True)
-                pass
-            elif "qui" in response:
-                saveAndQuitGame(quit=True)
-                pass
-            return
-
-        def showSearch(playerInput):
-            playerPosition = f'x{player.position[0]}y{player.position[1]}'
-            lootTable = saveManager.read(
-            )["rooms"][playerPosition]["loot"]
-
-            # check if player already specified a place to search in the player input
-            for place in lootTable.keys():
-                if place[:3] in playerInput:
-                    modifiedMap = saveManager.read().copy()
-
-                    player.pickUp(items[lootTable[place]], newLine=False)
-                    del modifiedMap["rooms"][playerPosition]["loot"][place]
-                    saveManager.write(modifiedMap)
-                    return
-
-            print("What do you want to search?")
-            searchOptions = ""
-            for element in lootTable.keys():
-                searchOptions += f"<{str(element).title()}> "
-            print(searchOptions + "<Back>")
-
-            response = flow.input("I want to search the... ")
-
-            if "bac" in response:
-                return flow.choose(player, saveManager, options)
-
-            for place in lootTable.keys():
-                if place[:3] in response:
-                    modifiedMap = saveManager.read().copy()
-
-                    player.pickUp(items[lootTable[place]])
-                    del modifiedMap["rooms"][playerPosition]["loot"][place]
-                    saveManager.write(modifiedMap)
-                    pass
-                pass
-            pass
+        flow.newLineSleep()
 
         def findKeyword():
             playerInput = flow.input("I want to... ")
+            flow.newLineSleep()
 
             if "chec" in playerInput:
                 showCheck(playerInput)
@@ -200,6 +203,7 @@ class flow:
                 return showMenu()
 
             print("Please rephrase that.")
+            flow.newLineSleep()
             findKeyword()
 
         return findKeyword()

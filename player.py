@@ -31,25 +31,31 @@ class player:
         else:
             self.inventory[self.inventory.index(item)]["quantity"] += 1
             print(f'[You picked up another {item["name"][1]}]')
+            pass
+        flow.newLineSleep()
         pass
 
     def showStats(self):
         print("Sure, here you go.")
+        flow.sleep()
         print(f'- Your name: {self.name}')
         print(f'- Health: {self.health}%')
         print(f'- Radiation exposure: {self.radiation} rads/min')
         print(f'- Armor: {self.armor}')
         print(f'- Speed: {self.speed}')
+        flow.newLineSleep()
         pass
 
     def showInventory(self):
         print("Sure, here you go.")
+        flow.sleep()
         for item in self.inventory:
             if item["quantity"] > 1:
                 print(" - " + str(item["quantity"]
                                   ) + "x " + item["name"][1])
             else:
                 print(" - " + item["name"][0])
+        flow.newLineSleep()
         pass
 
     def look(self):
@@ -57,7 +63,8 @@ class player:
 
     def go(self, saveManager, playerInput):
         def arrivedAt():
-            nameOfNewRoom = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']["name"]
+            nameOfNewRoom = saveManager.read(
+            )["rooms"][f'x{self.position[0]}y{self.position[1]}']["name"]
             if nameOfNewRoom != "":
                 print(f'You arrived at {nameOfNewRoom}.')
             else:
@@ -75,7 +82,7 @@ class player:
             arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
-        
+
         elif "wes" in playerInput:
             arrivedAt()
             self.position[0] -= 1

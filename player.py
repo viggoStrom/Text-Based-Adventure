@@ -25,7 +25,8 @@ class player:
             self.inventory.append(item)
             print(f'[You picked up {item["name"][0]}]')
             if item == items["aglet"]:
-                print("PLACEHOLDER (Aglets are currency)")
+                flow.newLineSleep()
+                print("It appears to be a small, metallic object with a plastic coating at one end. It's an aglet, the currency used in this world. Aglets hold value and can be used to purchase goods and services. Keep them safe, as they may prove useful in your journey through the wasteland.")
                 pass
 
         else:
@@ -61,7 +62,7 @@ class player:
     def look(self):
         pass
 
-    def go(self, saveManager, playerInput):
+    def go(self, saveManager, playerInput):        
         def arrivedAt():
             nameOfNewRoom = saveManager.read(
             )["rooms"][f'x{self.position[0]}y{self.position[1]}']["name"]
@@ -70,61 +71,77 @@ class player:
             else:
                 print("You have arrived.")
                 pass
+            flow.newLineSleep()
 
-        if "nor" in playerInput:
+        allowedDirections = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']["allowedDirections"]
+
+        if "nor" in playerInput and allowedDirections["north"]:
             self.position[1] -= 1
             arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
 
-        elif "sou" in playerInput:
+        elif "sou" in playerInput and allowedDirections["south"]:
             self.position[1] += 1
             arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
 
-        elif "wes" in playerInput:
+        elif "wes" in playerInput and allowedDirections["west"]:
             arrivedAt()
             self.position[0] -= 1
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
 
-        elif "eas" in playerInput:
+        elif "eas" in playerInput and allowedDirections["east"]:
             self.position[0] += 1
             arrivedAt()
             flow.choose(self, saveManager, ["search", "go", "check", "menu"])
             pass
         pass
 
-        allowedDirections = saveManager.read(
-        )["rooms"][f'x{self.position[0]}y{self.position[1]}']["allowedDirections"]
         modifiedString = ""
         for cardinalDirection in allowedDirections.keys():
             if allowedDirections[cardinalDirection] == True:
-                modifiedString += cardinalDirection
-                modifiedString += " "
+                modifiedString += f'<{cardinalDirection}> '
                 pass
             pass
-        modifiedString = modifiedString[:-1]
+        modifiedString += "<cancel>"
 
         print("Go where?")
-        print(f'<{modifiedString}>')
-        response = flow.input("... ")
+        print(modifiedString.title())
+        flow.newLineSleep()
 
-        if "nor" in response:
-            self.position[1] -= 1
-            pass
-        elif "sou" in response:
-            self.position[1] += 1
-            pass
-        elif "wes" in response:
-            self.position[0] -= 1
-            pass
-        elif "eas" in response:
-            self.position[0] += 1
-            pass
-        pass
+        def findKeyword():
+            response = flow.input("... ")
+            flow.newLineSleep()
 
-        arrivedAt()
+            if "can" in response:
+                return flow.choose(self, saveManager, ["search", "go", "check", "menu"])
+
+            elif "nor" in response and allowedDirections["north"]:
+                self.position[1] -= 1
+                pass
+
+            elif "sou" in response and allowedDirections["south"]:
+                self.position[1] += 1
+                pass
+
+            elif "wes" in response and allowedDirections["west"]:
+                self.position[0] -= 1
+                pass
+
+            elif "eas" in response and allowedDirections["east"]:
+                self.position[0] += 1
+                pass
+            else:
+                print("Please rephrase that.")
+                flow.newLineSleep()
+                return findKeyword()
+            pass
+
+            arrivedAt()
+        
+        findKeyword()
 
         flow.choose(self, saveManager, ["search", "go", "check", "menu"])

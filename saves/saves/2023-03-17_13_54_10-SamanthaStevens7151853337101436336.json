@@ -596,7 +596,7 @@
                 "north": true,
                 "south": true,
                 "west": true,
-                "east": false
+                "east": true
             },
             "enemies": []
         },
@@ -629,7 +629,7 @@
             "allowedDirections": {
                 "north": true,
                 "south": true,
-                "west": false,
+                "west": true,
                 "east": true
             },
             "enemies": []
@@ -747,7 +747,7 @@
             ],
             "loot": [],
             "allowedDirections": {
-                "north": false,
+                "north": true,
                 "south": true,
                 "west": true,
                 "east": true

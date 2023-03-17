@@ -63,7 +63,7 @@ class flow:
             print("Check what?")
             print("<Inventory> <Stats> <Back>")
             flow.newLineSleep()
-            
+
             response = flow.input("...")
             flow.newLineSleep()
 
@@ -78,7 +78,11 @@ class flow:
         def showMenu():
             print("What do you want to do?")
             print("<Save> <Quit> <Save & Quit> <Back>")
+            flow.newLineSleep()
+
             response = flow.input("... ")
+            flow.newLineSleep()
+
             if "bac" in response:
                 return flow.choose(player, saveManager, options)
             elif ("qui" and "sav") in response:

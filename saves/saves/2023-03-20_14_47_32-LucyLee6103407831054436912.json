@@ -373,7 +373,7 @@
             "enemies": []
         },
         "x4y3": {
-            "name": "the wasteland",
+            "name": "",
             "scenario": "",
             "loot": [],
             "allowedDirections": {

@@ -17,7 +17,8 @@ else:
         "columns": columns,
         "template": {
             "name": "",
-            "coordinates": [0, 0],
+            "scenario": "",
+            # "coordinates": [0, 0],
             "loot": [],
             # "look": {
             #     "north": "",
@@ -105,5 +106,13 @@ else:
         elif y == maxY-1:
             map["rooms"][room]["allowedDirections"]["south"] = False
             pass
+
+    json.dump(map, open("saves/template/map.json", "w"))
+
+    map = json.load(open("saves/template/map.json", "r"))
+
+    map["rooms"]["x3y4"]["allowedDirections"]["east"] = False
+    map["rooms"]["x5y4"]["allowedDirections"]["west"] = False
+    map["rooms"]["x4y5"]["allowedDirections"]["north"] = False
 
     json.dump(map, open("saves/template/map.json", "w"))

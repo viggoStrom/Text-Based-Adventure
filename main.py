@@ -59,7 +59,8 @@ def playerSetup():
 
     survivor = player.player(name)
 
-    print(f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
+    print(
+        f"Nice to meet you, {survivor.name}! Your journey through the wasteland begins now.")
     flow.newLineSleep()
     return survivor
 

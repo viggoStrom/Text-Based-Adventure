@@ -373,7 +373,7 @@
             "enemies": []
         },
         "x4y3": {
-            "name": "the wasteland",
+            "name": "",
             "scenario": "",
             "loot": [],
             "allowedDirections": {
@@ -482,7 +482,7 @@
         },
         "x4y4": {
             "name": "the vault",
-            "scenario": "",
+            "scenario": "vaultSequence()",
             "loot": {
                 "floor": "geigerCounter",
                 "lockers": "flashlight",

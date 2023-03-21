@@ -19,7 +19,7 @@ class player:
             "leftHand": "",
             "body": "",
         }
-        self.position = [4, 4]
+        self.position = [2, 3]
         pass
 
     def getPos(self):
@@ -70,7 +70,7 @@ class player:
         flow.sleep()
         print(f'- Your name: {self.name}')
         print(f'- Health: {int(self.health/self.maxHealth*100)}%')
-        print(f'- Radiation exposure: {self.radiation} rads/min')
+        # print(f'- Radiation exposure: {self.radiation} rads/min')
         print(f'- Armor: {self.armor}')
         print(f'- Speed: {self.speed}')
         flow.newLineSleep()

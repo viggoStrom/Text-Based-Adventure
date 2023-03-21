@@ -68,9 +68,9 @@ def vaultSequence():
     survivor.pickUp(item["knife"])
 
     #
-    survivor.position = [2, 1]
-    from fightManager import fight
-    fight(survivor, saveManager)
+    # survivor.position = [2, 1]
+    # from fightManager import fight
+    # fight(survivor, saveManager)
     #
 
     flow.choose(survivor, saveManager, ["search", "go", "check", "menu"])

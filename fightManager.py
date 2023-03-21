@@ -42,34 +42,11 @@ class fight:
             print(divider)
             flow.newLineSleepFight()
 
-        battleOverview()
-
-        alternatives = [
-            "<Attack (",
-            "<Run>"
-        ]
-        for enemy in self.enemies:
-            alternatives[0] += enemy["name"][1].title() + ", "
-        alternatives[0] = alternatives[0][:-2]
-        alternatives[0] += ")>"
-
-        print("What do you do?")
-        for alternative in alternatives:
-            print(alternative)
-        flow.newLineSleepFight()
-
         def promptAttack(passedthroughInput):
-            def findKeyword(response, catch=False):
-                for enemy in self.enemies:
-                    if enemy["name"][1][:3] in response:
-                        attack(enemy)
-                        break
-
-                if catch == False:
-                    print("Please rephrase that.")
-                    flow.newLineSleepFight()
-
-            findKeyword(passedthroughInput, catch=True)
+            for enemy in self.enemies:
+                if enemy["name"][1][:3] in passedthroughInput:
+                    attack(enemy)
+                    return findKeyword()
 
             print("Attack what?")
             options = ""
@@ -81,7 +58,14 @@ class fight:
             response = flow.input("... ")
             flow.newLineSleepFight()
 
-            findKeyword(response)
+            for enemy in self.enemies:
+                if enemy["name"][1][:3] in response:
+                    attack(enemy)
+                    return findKeyword()
+            # else
+            print("Please rephrase that.")
+            flow.newLineSleepFight()
+            promptAttack()
 
         def attack(enemy):
             if player.speed >= enemy["speed"]:
@@ -104,7 +88,18 @@ class fight:
 
             battleOverview()
 
+        def checkDeath():
+            # for ene
+            pass
+
         def findKeyword():
+            checkDeath()
+
+            print("What do you do?")
+            for alternative in alternatives:
+                print(alternative)
+            flow.newLineSleepFight()
+
             response = flow.input("... ")
             flow.newLineSleepFight()
 
@@ -115,6 +110,7 @@ class fight:
                     if player.speed < enemy["speed"]:
                         print(
                             f'You try to run away but {enemy["name"][0]} got a hit in.')
+                        player.health -= enemy["damage"]
                     else:
                         print(
                             f'{enemy["name"][1].title()} tried hitting you but you got away.')
@@ -125,5 +121,17 @@ class fight:
                 print("Please rephrase that.")
                 flow.newLineSleepFight()
                 findKeyword()
+            findKeyword
+
+        battleOverview()
+
+        alternatives = [
+            "<Attack (",
+            "<Run>"
+        ]
+        for enemy in self.enemies:
+            alternatives[0] += enemy["name"][1].title() + ", "
+        alternatives[0] = alternatives[0][:-2]
+        alternatives[0] += ")>"
 
         findKeyword()

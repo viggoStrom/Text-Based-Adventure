@@ -73,6 +73,15 @@ class player:
                 pass
             flow.newLineSleep()
 
+            scenario = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']
+            if scenario["scenario"] != "" and scenario["scenarioRead"] == False:
+                print(scenario["scenario"])
+                flow.newLineSleep()
+                map = saveManager.read()
+                map["rooms"][f'x{self.position[0]}y{self.position[1]}']["scenarioRead"] = True
+                saveManager.write(map)
+            pass
+
         allowedDirections = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']["allowedDirections"]
 
         if "nor" in playerInput and allowedDirections["north"]:
@@ -141,12 +150,6 @@ class player:
             pass
 
             arrivedAt()
-
-            scenario = saveManager.read()["room"][f'x{self.position[0]}y{self.position[1]}']["scenario"]
-            if scenario != "":
-                print(scenario)
-                flow.newLineSleep()
-            pass
         
         findKeyword()
 

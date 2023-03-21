@@ -405,8 +405,8 @@
         },
         "x4y3": {
             "name": "the wasteland",
-            "scenario": "",
-            "scenarioRead": false,
+            "scenario": "Oh Stuff",
+            "scenarioRead": true,
             "loot": {
                 "ground": "duke-a-cola",
                 "shrubs": "aglet"

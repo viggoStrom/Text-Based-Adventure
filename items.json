@@ -49,6 +49,16 @@
             "currency"
         ]
     },
+    "duke-a-cola": {
+        "name": ["a Duke-a-Cola", "Duke-a-Cola"],
+        "quantity": 1,
+        "damage": -1,
+        "speed": 0,
+        "range": 0,
+        "traits": [
+            "food"
+        ]
+    },
     "item": {
         "name": ["an item", "item"],
         "quantity": 1,

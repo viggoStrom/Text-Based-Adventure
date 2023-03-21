@@ -89,7 +89,20 @@ class fight:
             battleOverview()
 
         def checkDeath():
-            # for ene
+            if player.health <= 0:
+                print("You have died.")
+                flow.newLineSleep()
+                print("This is one of multiple endings")
+                flow.newLineSleep()
+                return SystemExit
+                
+            for enemy in self.enemies:
+                if enemy["health"] <= 0:
+                    # fix death
+                    map = saveManager.read()
+                    map["rooms"][player.getPos()][enemies] = map["rooms"][player.getPos()][enemies].keys()[self.enemies.index(enemy)]
+                    saveManager.write(map)
+                    pass 
             pass
 
         def findKeyword():

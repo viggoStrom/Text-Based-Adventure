@@ -1,0 +1,27 @@
+{
+    "cat": {
+        "name": [
+            "a cat",
+            "cat"
+        ],
+        "damage": 1,
+        "speed": 3,
+        "health": 3,
+        "drops": [
+            "catsPaw"
+        ]
+    },
+    "enemy": {
+        "name": [
+            "an enemy",
+            "enemy"
+        ],
+        "damage": 0,
+        "speed": 0,
+        "health": 0,
+        "drops": [
+            ""
+        ]
+    },
+    "trailingCommaError": false
+}

@@ -287,24 +287,17 @@
             "enemies": []
         },
         "x4y2": {
-            "name": "a field",
-            "scenario": "As you make your way north towards the settlement, you start to notice the dilapidated state of everything around you. Suddenly, a cat jumps out and attacks you, catching you off guard. Upon closer examination, you realize that the cat, which you initially thought was cute, is actually quite menacing.",
+            "name": "",
+            "scenario": "",
             "scenarioRead": false,
-            "loot": {
-                "bone piles": "aglet",
-                "cats nest": "catsPaw"
-            },
+            "loot": [],
             "allowedDirections": {
                 "north": true,
                 "south": true,
                 "west": true,
                 "east": true
             },
-            "enemies": [
-                "cat",
-                "cat",
-                "cat"
-            ]
+            "enemies": []
         },
         "x5y2": {
             "name": "",
@@ -412,7 +405,7 @@
         },
         "x4y3": {
             "name": "the wasteland",
-            "scenario": "As you step out of the safety of the vault, the searing sun blinds your eyes. Your gaze wanders across the desolate horizon, and you catch sight of a small settlement in the north. Perhaps someone there can shed light on what has transpired since the world fell apart. As you survey your surroundings, you notice some intriguing sights to the east and west - potential treasures, or danger lurking in the shadows.",
+            "scenario": "",
             "scenarioRead": false,
             "loot": {
                 "ground": "duke-a-cola",

@@ -1,8 +1,7 @@
 import json
-import flowControl
-flow = flowControl.flow
+from flowControl import flow
 items = json.load(open("items.json"))
-
+from fightManager import fight
 
 class player:
     def __init__(self, name):
@@ -19,6 +18,9 @@ class player:
         }
         self.position = [4, 4]
         pass
+
+    def getPos(self):
+        return f'x{self.position[0]}y{self.position[1]}'
 
     def pickUp(self, item):
         if item not in self.inventory:
@@ -59,13 +61,10 @@ class player:
         flow.newLineSleep()
         pass
 
-    def look(self):
-        pass
-
     def go(self, saveManager, playerInput):        
         def arrivedAt():
             nameOfNewRoom = saveManager.read(
-            )["rooms"][f'x{self.position[0]}y{self.position[1]}']["name"]
+            )["rooms"][self.getPos()]["name"]
             if nameOfNewRoom != "":
                 print(f'You arrived at {nameOfNewRoom}.')
             else:
@@ -73,16 +72,21 @@ class player:
                 pass
             flow.newLineSleep()
 
-            scenario = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']
+            scenario = saveManager.read()["rooms"][self.getPos()]
             if scenario["scenario"] != "" and scenario["scenarioRead"] == False:
                 print(scenario["scenario"])
                 flow.newLineSleep()
+
                 map = saveManager.read()
-                map["rooms"][f'x{self.position[0]}y{self.position[1]}']["scenarioRead"] = True
+                map["rooms"][self.getPos()]["scenarioRead"] = True
                 saveManager.write(map)
+            
+            if len(saveManager.read()["rooms"][self.getPos()]["enemies"]) > 0:
+                fight(self, saveManager)
+                pass
             pass
 
-        allowedDirections = saveManager.read()["rooms"][f'x{self.position[0]}y{self.position[1]}']["allowedDirections"]
+        allowedDirections = saveManager.read()["rooms"][self.getPos()]["allowedDirections"]
 
         if "nor" in playerInput and allowedDirections["north"]:
             self.position[1] -= 1

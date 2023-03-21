@@ -29,6 +29,10 @@ class flow:
         flow.newLine()
         flow.sleep()
 
+    def newLineSleepFight():
+        flow.newLine()
+        time.sleep(config["masterFightSleep"])
+
     def filter(inputString):
         return re.sub(r"[^a-zA-Z0-9 ]", "", inputString)
 

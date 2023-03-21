@@ -1,10 +1,10 @@
 import json
 import random
+import re
 
 import player
 import gameManager
-import flowControl
-flow = flowControl.flow
+from flowControl import flow
 
 item = json.load(open("items.json"))
 config = json.load(open("config.json"))
@@ -34,7 +34,8 @@ def playerSetup():
     name = flow.input("My name is... ").title()
     flow.newLineSleep()
 
-    if name == "":
+    name = re.sub(r'\s{2,}', " ", name)
+    if name == "" or name == " ":
         randomNames = [
             "Sally Smith",
             "Max Matthews",
@@ -65,6 +66,12 @@ def vaultSequence():
     flow.newLineSleep()
 
     survivor.pickUp(item["knife"])
+
+    #
+    survivor.position = [4, 2]
+    from fightManager import fight
+    fight(survivor, saveManager)
+    #
 
     flow.choose(survivor, saveManager, ["search", "go", "check", "menu"])
     pass

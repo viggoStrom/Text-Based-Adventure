@@ -5,7 +5,7 @@
             "knife"
         ],
         "quantity": 1,
-        "damage": 1,
+        "damage": 2,
         "speed": 1,
         "range": 1,
         "traits": [
@@ -57,6 +57,16 @@
         "range": 0,
         "traits": [
             "food"
+        ]
+    },
+    "catsPaw": {
+        "name": ["a cat's paw", "cat's paw"],
+        "quantity": 1,
+        "damage": 1,
+        "speed": 4,
+        "range": 1,
+        "traits": [
+            "weapon"
         ]
     },
     "item": {

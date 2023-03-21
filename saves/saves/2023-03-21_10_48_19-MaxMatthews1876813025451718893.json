@@ -301,8 +301,6 @@
                 "east": true
             },
             "enemies": [
-                "cat",
-                "cat",
                 "cat"
             ]
         },

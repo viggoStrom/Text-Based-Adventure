@@ -5,9 +5,10 @@ if input("Sure you wanna regenerate the map template? y/n \n ...") != "y":
 else:
     print("ok")
 
-    columns = 9
-    rows = 9
+    columns = 5
+    rows = 5
 
+    # populate map with rooms from template
     map = json.load(open("saves/template/map.json", "r"))
 
     map = {"rooms": {}, "meta": {}}
@@ -18,14 +19,8 @@ else:
         "template": {
             "name": "",
             "scenario": "",
-            # "coordinates": [0, 0],
+            "scenarioRead": False,
             "loot": [],
-            # "look": {
-            #     "north": "",
-            #     "south": "",
-            #     "west": "",
-            #     "east": ""
-            # },
             "allowedDirections": {
                 "north": True,
                 "south": True,
@@ -33,7 +28,6 @@ else:
                 "east": True
             },
             "enemies": [],
-            # "radiation": 0
         }
     }
 
@@ -43,49 +37,29 @@ else:
             map["rooms"][f'x{x}y{y}'] = map["meta"]["template"]
             pass
         pass
-        # room["name"] = ""
-        # room["coordinate"] = [x, y]
-        # room["loot"] = {}
-        # room["allowedDirections"] = {
-        #     "north": True,
-        #     "south": True,
-        #     "west": True,
-        #     "east": True
-        # }
-        # room["look"] = {
-        #     "north": "",
-        #     "south": "",
-        #     "west": "",
-        #     "east": ""
-        # }
-        # room["enemies"] = {}
-        # room["radiation"] = 0
 
     json.dump(map, open("saves/template/map.json", "w"))
 
+    # starting room
     map = json.load(open("saves/template/map.json", "r"))
 
-    map["rooms"]["x4y4"]["name"] = "the vault"
-    map["rooms"]["x4y4"]["loot"] = {
+    map["rooms"]["x2y3"]["name"] = "the vault"
+    map["rooms"]["x2y3"]["loot"] = {
         "floor": "geigerCounter",
         "lockers": "flashlight",
         "bodies": "aglet"
     }
-    map["rooms"]["x4y4"]["allowedDirections"] = {
+    map["rooms"]["x2y3"]["allowedDirections"] = {
         "north": True,
         "south": False,
         "west": False,
         "east": False
     }
-    # map["rooms"]["x4y4"]["look"] = {
-    #     "north": "the vault door",
-    #     "south": "a wall",
-    #     "west": "a wall",
-    #     "east": "a wall"
-    # }
 
     json.dump(map, open("saves/template/map.json", "w"))
 
+
+    # walls
     map = json.load(open("saves/template/map.json", "r"))
 
     maxX = map["meta"]["rows"]
@@ -111,8 +85,8 @@ else:
 
     map = json.load(open("saves/template/map.json", "r"))
 
-    map["rooms"]["x3y4"]["allowedDirections"]["east"] = False
-    map["rooms"]["x5y4"]["allowedDirections"]["west"] = False
-    map["rooms"]["x4y5"]["allowedDirections"]["north"] = False
+    map["rooms"]["x1y3"]["allowedDirections"]["east"] = False
+    map["rooms"]["x3y3"]["allowedDirections"]["west"] = False
+    map["rooms"]["x2y4"]["allowedDirections"]["north"] = False
 
     json.dump(map, open("saves/template/map.json", "w"))

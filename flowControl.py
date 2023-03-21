@@ -20,6 +20,10 @@ class flow:
     def sleep():
         time.sleep(config["masterSleep"])
         pass
+   
+    def sleepFight():
+        time.sleep(config["masterFightSleep"])
+        pass
 
     def newLine():
         print("\n")

@@ -1,20 +1,23 @@
+from fightManager import fight
 import json
 from flowControl import flow
 items = json.load(open("items.json"))
-from fightManager import fight
+
 
 class player:
     def __init__(self, name):
         self.name = name
         self.inventory = []
-        self.health = 100
+        self.health = 10
+        self.maxHealth = 10
+        self.damage = 0
         self.armor = 0
         self.speed = 1
         self.radiation = 25
-        self.equiped = {
-            "rightHand": {},
-            "leftHand": {},
-            "body": {},
+        self.equipped = {
+            "rightHand": "",
+            "leftHand": "",
+            "body": "",
         }
         self.position = [4, 4]
         pass
@@ -22,27 +25,51 @@ class player:
     def getPos(self):
         return f'x{self.position[0]}y{self.position[1]}'
 
+    def equip(self, item, place):
+        self.equipped[place] = items[item]
+        for item in self.equipped.values():
+            try:
+                self.armor += item["armor"]
+            except:
+                pass
+            try:
+                self.damage += item["damage"]
+            except:
+                pass
+            try:
+                self.speed += item["speed"]
+            except:
+                pass
+        pass
+
     def pickUp(self, item):
         if item not in self.inventory:
             self.inventory.append(item)
             print(f'[You picked up {item["name"][0]}]')
+            flow.newLineSleep()
             if item == items["aglet"]:
-                flow.newLineSleep()
                 print("It appears to be a small, metallic object with a plastic coating at one end. It's an aglet, the currency used in this world. Aglets hold value and can be used to purchase goods and services. Keep them safe, as they may prove useful in your journey through the wasteland.")
+                flow.newLineSleep()
+                pass
+            if item == items["knife"]:
+                print(
+                    "You feel like you are going to need this in the future so you equip it straight away.")
+                self.equip("knife", "rightHand")
+                flow.newLineSleep()
                 pass
 
         else:
             self.inventory[self.inventory.index(item)]["quantity"] += 1
             print(f'[You picked up another {item["name"][1]}]')
+            flow.newLineSleep()
             pass
-        flow.newLineSleep()
         pass
 
     def showStats(self):
         print("Sure, here you go.")
         flow.sleep()
         print(f'- Your name: {self.name}')
-        print(f'- Health: {self.health}%')
+        print(f'- Health: {int(self.health/self.maxHealth*100)}%')
         print(f'- Radiation exposure: {self.radiation} rads/min')
         print(f'- Armor: {self.armor}')
         print(f'- Speed: {self.speed}')
@@ -61,7 +88,7 @@ class player:
         flow.newLineSleep()
         pass
 
-    def go(self, saveManager, playerInput):        
+    def go(self, saveManager, playerInput):
         def arrivedAt():
             nameOfNewRoom = saveManager.read(
             )["rooms"][self.getPos()]["name"]
@@ -80,13 +107,14 @@ class player:
                 map = saveManager.read()
                 map["rooms"][self.getPos()]["scenarioRead"] = True
                 saveManager.write(map)
-            
+
             if len(saveManager.read()["rooms"][self.getPos()]["enemies"]) > 0:
                 fight(self, saveManager)
                 pass
             pass
 
-        allowedDirections = saveManager.read()["rooms"][self.getPos()]["allowedDirections"]
+        allowedDirections = saveManager.read(
+        )["rooms"][self.getPos()]["allowedDirections"]
 
         if "nor" in playerInput and allowedDirections["north"]:
             self.position[1] -= 1
@@ -154,7 +182,7 @@ class player:
             pass
 
             arrivedAt()
-        
+
         findKeyword()
 
         flow.choose(self, saveManager, ["search", "go", "check", "menu"])

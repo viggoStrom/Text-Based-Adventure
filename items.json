@@ -69,6 +69,17 @@
             "weapon"
         ]
     },
+    "hammer": {
+        "name": ["a hammer", "hammer"],
+        "quantity": 1,
+        "damage": 3,
+        "speed": 0.5,
+        "range": 1.5,
+        "traits": [
+            "weapon",
+            "bash"
+        ]
+    },
     "item": {
         "name": ["an item", "item"],
         "quantity": 1,

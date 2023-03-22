@@ -60,7 +60,7 @@
         ]
     },
     "catsPaw": {
-        "name": ["a cat's paw", "cat's paw"],
+        "name": ["a cats paw", "cats paw"],
         "quantity": 1,
         "damage": 1,
         "speed": 4,
@@ -78,6 +78,37 @@
         "traits": [
             "weapon",
             "bash"
+        ]
+    },
+    "stimpack": {
+        "name": ["a stimpack", "stimpack"],
+        "quantity": 1,
+        "damage": 0,
+        "speed": 0,
+        "range": 0,
+        "traits": [
+            ""
+        ]
+    },
+    "9mmGun": {
+        "name": ["a 9mm gun", "9mm gun"],
+        "quantity": 1,
+        "damage": 3,
+        "speed": 2,
+        "range": 10,
+        "traits": [
+            "weapon"
+        ]
+    },
+    "vaultSuit": {
+        "name": ["a vault suit", "vault suit"],
+        "quantity": 1,
+        "damage": 0,
+        "speed": 0,
+        "range": 0,
+        "armor": 1,
+        "traits": [
+            "armor"
         ]
     },
     "item": {

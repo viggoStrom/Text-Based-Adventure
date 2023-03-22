@@ -6,7 +6,7 @@ import player
 import gameManager
 from flowControl import flow
 
-item = json.load(open("items.json"))
+items = json.load(open("items.json"))
 config = json.load(open("config.json"))
 
 
@@ -65,12 +65,13 @@ def vaultSequence():
     print("You slowly open your eyes, feeling groggy and disoriented. As your senses slowly come back to you, you hear the familiar sound of Geiger counters going wild in the background. You look down to see a knife in your hand, but you have no idea how you got here, or what happened. You seem to be in a vault of some sort, but everything is hazy and confusing.")
     flow.newLineSleep()
 
-    survivor.pickUp(item["knife"])
+    survivor.pickUp(items["knife"])
+    survivor.pickUp(items["vaultSuit"])
 
     #
-    survivor.position = [2, 1]
-    from fightManager import fight
-    fight(survivor, saveManager)
+    # survivor.position = [2, 1]
+    # from fightManager import fight
+    # fight(survivor, saveManager)
     #
 
     flow.choose(survivor, saveManager, ["search", "go", "check", "menu"])

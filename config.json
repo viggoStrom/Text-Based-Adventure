@@ -1,5 +1,5 @@
 {
-    "masterSleep": 0.6,
+    "masterSleep": 0.5,
     "masterFightSleep": 0.3,
     "damageModifier": 1,
     "hungerModifier": 1,

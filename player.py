@@ -56,6 +56,10 @@ class player:
                     "You feel like you are going to need this in the future so you equip it straight away.")
                 self.equip("knife", "rightHand")
                 flow.newLineSleep()
+            if item == items["vaultSuit"]:
+                print("The clothes I am wearing are dirty and somewhat torn.")
+                self.equip("vaultSuit", "body")
+                flow.newLineSleep()
                 pass
 
         else:
@@ -81,10 +85,13 @@ class player:
         flow.sleep()
         for item in self.inventory:
             if item["quantity"] > 1:
-                print(" - " + str(item["quantity"]
-                                  ) + "x " + item["name"][1])
+                print(" - " + str(item["quantity"]) + "x " + item["name"][1])
+            elif item in self.equipped.values():
+                print(f' - {item["name"][0]} (equipped)')
+                pass
             else:
                 print(" - " + item["name"][0])
+                
         flow.newLineSleep()
         pass
 

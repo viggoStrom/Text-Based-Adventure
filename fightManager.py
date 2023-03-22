@@ -16,7 +16,7 @@ class fight:
             if len(self.enemies) > 1:
                 opponent = "a bunch of enemies"
             else:
-                opponent = self.enemies[0]
+                opponent = self.enemies[0]["name"][0]
 
             divider = ""
             for i in range(len(f'= A fight has begun between {player.name} and {opponent} =')):
@@ -70,7 +70,7 @@ class fight:
         def attack(enemy):
             if player.speed >= enemy["speed"]:
                 print(
-                    f'{player.name} was faster than {enemy["name"][1]} and attacked first.')
+                    f'{player.name} was faster than {enemy["name"][1]} and attacked first and dealt {player.damage} dmg while {enemy["name"][1]} dealt {enemy["damage"]} dmg.')
                 self.enemies[self.enemies.index(enemy)]["health"] = self.enemies[self.enemies.index(
                     enemy)]["health"] - player.damage
                 if enemy["health"] >= 0:
@@ -78,7 +78,7 @@ class fight:
 
             else:
                 print(
-                    f'{enemy["name"][1].title()} was faster than {player.name} and attacked first.')
+                    f'{enemy["name"][1].title()} was faster than {player.name} and attacked first and dealt {enemy["damage"]} dmg while {player.name} dealt {player.damage} dmg.')
                 self.enemies[self.enemies.index(enemy)]["health"] = self.enemies[self.enemies.index(
                     enemy)]["health"] - player.damage
 
@@ -94,19 +94,28 @@ class fight:
                 flow.newLineSleep()
                 print("This is one of multiple endings")
                 flow.newLineSleep()
-                return SystemExit
+                raise SystemExit
                 
             for enemy in self.enemies:
                 if enemy["health"] <= 0:
-                    # fix death
+                    print(f'You have defeated {enemy["name"][1].title()}.')
+                    flow.newLineSleep()
+                    player.pickUp(items[enemy["drops"][0]])
+                    try:
+                        pass
+                    except:
+                        print(f'{enemy["name"][0].title()} did not drop any loot.')
+                        flow.newLineSleep()
+                        pass
                     map = saveManager.read()
-                    map["rooms"][player.getPos()][enemies] = map["rooms"][player.getPos()][enemies].keys()[self.enemies.index(enemy)]
+                    del map["rooms"][player.getPos()]["enemies"][map["rooms"][player.getPos()]["enemies"].index(enemy["name"][1])]
                     saveManager.write(map)
-                    pass 
             pass
 
         def findKeyword():
             checkDeath()
+            if len(saveManager.read()["rooms"][player.getPos()]["enemies"]) <= 0:
+                return
 
             print("What do you do?")
             for alternative in alternatives:
@@ -122,12 +131,13 @@ class fight:
                 for enemy in self.enemies:
                     if player.speed < enemy["speed"]:
                         print(
-                            f'You try to run away but {enemy["name"][0]} got a hit in.')
+                            f'You try to run away but {enemy["name"][0]} got a hit in. ({enemy["damage"]} dmg)')
                         player.health -= enemy["damage"]
                     else:
                         print(
                             f'{enemy["name"][1].title()} tried hitting you but you got away.')
                     flow.sleepFight()
+                    checkDeath()
                 pass
                 flow.newLineSleepFight()
             else:

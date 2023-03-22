@@ -48,13 +48,10 @@
             "enemies": []
         },
         "x3y0": {
-            "name": "the other vault",
-            "scenario": "As you take in your surroundings, you notice that the space you're in appears to be a vault similar to the one where you woke up. However, something feels different about this place - it's more alive, more vibrant. Suddenly, a figure clad in a pristine blue-yellow jumpsuit, similar to your own, but much cleaner, approaches you.",
+            "name": "",
+            "scenario": "",
             "scenarioRead": false,
-            "loot": {
-                "cabinet": "stimpack",
-                "crates": "9mmGun"
-            },
+            "loot": [],
             "allowedDirections": {
                 "north": false,
                 "south": true,

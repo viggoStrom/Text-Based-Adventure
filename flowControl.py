@@ -49,6 +49,15 @@ class flow:
         pass
 
     def choose(player, saveManager, options):
+        def doScenario():
+            if player.getPos() == "x3y0":
+                print("You are safe now. I recognize your suit, you're one of us, just a bit more hardened perhaps *smirks*.")
+                flow.newLineSleep()
+                print("This is one of multiple endings.")
+                flow.newLineSleep()
+                raise SystemExit
+            pass        
+        doScenario()
         def saveAndQuitGame(save=False, quit=False):
             if save == True:
                 # save game here
@@ -58,7 +67,7 @@ class flow:
                 print("Save failed!")
                 return
             if quit == True:
-                return SystemExit
+                raise SystemExit
 
         def showCheck(playerInput):
             if "inv" in playerInput:
@@ -199,11 +208,11 @@ class flow:
             playerInput = flow.input("I want to... ")
             flow.newLineSleep()
 
-            if "chec" in playerInput:
+            if "che" in playerInput:
                 showCheck(playerInput)
                 return flow.choose(player, saveManager, options)
 
-            elif "sear" in playerInput:
+            elif "sea" in playerInput:
                 showSearch(playerInput)
                 return flow.choose(player, saveManager, options)
 
@@ -211,7 +220,7 @@ class flow:
                 player.go(saveManager, playerInput)
                 return flow.choose(player, saveManager, options)
 
-            elif "menu" in playerInput:
+            elif "men" in playerInput:
                 return showMenu()
 
             print("Please rephrase that.")

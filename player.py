@@ -91,8 +91,58 @@ class player:
                 pass
             else:
                 print(" - " + item["name"][0])
-                
         flow.newLineSleep()
+
+        def findKeyword():
+            print("What do you do?")
+            print("<Equip> <Unequip> <Use> <Back>")
+            flow.newLineSleep()
+
+            response = flow.input("... ")
+            flow.newLineSleep()
+
+            if ("eq" or "qu") in response:
+                print("Equip what?")
+                for item in self.inventory:
+                    equipped = ""
+                    if item in self.equipped.values():
+                        equipped = "(equipped)"
+                    print(f' - {item["name"][1]} {equipped}')
+                flow.newLineSleep()
+
+                def findKeyword():
+                    response = flow.input("... ")
+
+                    for item in self.equipped.values():
+                        if type(item) != dict:
+                            pass
+                        elif response[:3] in item["name"][1]:
+                            print(f'{item["name"][1].title()} is already equipped.')
+                            flow.newLineSleep()
+                            pass
+
+                    print("Please rephrase that.")
+                    flow.newLineSleep()
+                    findKeyword()
+                
+                findKeyword()
+                pass
+
+            elif ("un" or "ne") in response:
+                pass
+
+            elif "use" in response:
+                pass
+
+            elif ("bac" or "bak") in response:
+                pass
+            
+            else:
+                print("Please rephrase that.")
+                flow.newLineSleep()
+                findKeyword()
+        
+        findKeyword()
         pass
 
     def go(self, saveManager, playerInput):

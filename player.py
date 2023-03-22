@@ -120,7 +120,10 @@ class player:
                             print(f'{item["name"][1].title()} is already equipped.')
                             flow.newLineSleep()
                             pass
-
+                    if "" in response:
+                        # todo
+                        pass
+                    
                     print("Please rephrase that.")
                     flow.newLineSleep()
                     findKeyword()

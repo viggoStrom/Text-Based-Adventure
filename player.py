@@ -93,18 +93,26 @@ class player:
                 print(" - " + item["name"][0])
         flow.newLineSleep()
 
-        def findKeyword():
-            print("What do you do?")
-            print("<Equip> <Unequip> <Use> <Back>")
-            flow.newLineSleep()
+        print("What do you do?")
+        print("<Equip> <Unequip> <Use> <Back>")
+        flow.newLineSleep()
 
+        def findKeyword():
             response = flow.input("... ")
             flow.newLineSleep()
 
-            if ("eq" or "qu") in response:
-                print("Equip what?")
+            def showEquip():
+                equipableItems = []
                 for item in self.inventory:
+                    if ("armor" or "weapon") in item["traits"]:
+                        equipableItems.append(item)
+                        pass
+                    pass
+
+                print("Equip what?")
+                for item in equipableItems:
                     equipped = ""
+
                     if item in self.equipped.values():
                         equipped = "(equipped)"
                     print(f' - {item["name"][1]} {equipped}')
@@ -112,39 +120,99 @@ class player:
 
                 def findKeyword():
                     response = flow.input("... ")
-
-                    for item in self.equipped.values():
-                        if type(item) != dict:
-                            pass
-                        elif response[:3] in item["name"][1]:
-                            print(f'{item["name"][1].title()} is already equipped.')
-                            flow.newLineSleep()
-                            pass
-                    if "" in response:
-                        # todo
-                        pass
                     
+                    for item in equipableItems:
+                        if item["name"][1][:3] in response:
+                            # todo - keep tidy this time
+                            pass
+                        pass
+                    pass
+                pass
+
+            def showUnequip():
+                pass
+
+            def showUse():
+                pass
+
+            if ("eq" or "qu") in response:
+                showEquip()
+
+
+                def findKeyword():
+
+                    for item in self.inventory:
+                        if item in self.equipped.values():
+                            if type(item) != dict:
+                                pass
+                            elif response[:3] in item["name"][1]:
+                                print(
+                                    f'{item["name"][1].title()} is already equipped.')
+                                flow.newLineSleep()
+                                pass
+                        elif item["name"][0][:3] in response:
+                            print(
+                                f'Where do you want to equip the {item["name"][1]}?')
+                            rightHand = self.equipped["rightHand"]["name"][1]
+                            leftHand = self.equipped["leftHand"]["name"][1]
+                            body = self.equipped["body"]["name"][1]
+                            print(
+                                f'<Right Hand ({rightHand})> <Left Hand ({leftHand})> <Body ({body})>')
+                            flow.newLineSleep()
+
+                            def findSlot():
+                                response = flow.input("... ")
+                                flow.newLineSleep()
+
+                                if "ri" in response:
+                                    slot = "rightHand"
+                                    formattedName = "right hand"
+                                    pass
+                                elif "le" in response:
+                                    slot = "leftHand"
+                                    formattedName = "left hand"
+                                    pass
+                                elif "bo" in response:
+                                    slot = "body"
+                                    formattedName = "body"
+                                    pass
+                                else:
+                                    print("Please rephrase that.")
+                                    flow.newLineSleep()
+                                    findSlot()
+
+                                return slot, formattedName
+
+                            slot, formattedName = findSlot()
+
+                            print(
+                                f'You equipped {item["name"][0]} at {formattedName}.')
+                            self.equip(item, slot)
+                            pass
+
                     print("Please rephrase that.")
                     flow.newLineSleep()
-                    findKeyword()
-                
+                    findSlot()
+
                 findKeyword()
                 pass
 
             elif ("un" or "ne") in response:
+                showUnequip()
                 pass
 
             elif "use" in response:
+                showUse()
                 pass
 
             elif ("bac" or "bak") in response:
-                pass
-            
+                return
+
             else:
                 print("Please rephrase that.")
                 flow.newLineSleep()
                 findKeyword()
-        
+
         findKeyword()
         pass
 

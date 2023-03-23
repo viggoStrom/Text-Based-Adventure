@@ -1,3 +1,4 @@
+import time
 from flowControl import flow
 import json
 items = json.load(open("items.json"))
@@ -62,7 +63,7 @@ class fight:
                 if enemy["name"][1][:3] in response:
                     attack(enemy)
                     return findKeyword()
-            # else
+
             print("Please rephrase that.")
             flow.newLineSleepFight()
             promptAttack()
@@ -94,6 +95,7 @@ class fight:
                 flow.newLineSleep()
                 print("This is one of multiple endings")
                 flow.newLineSleep()
+                time.sleep(20)
                 raise SystemExit
                 
             for enemy in self.enemies:

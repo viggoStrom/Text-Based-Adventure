@@ -55,6 +55,7 @@ class flow:
                 flow.newLineSleep()
                 print("This is one of multiple endings.")
                 flow.newLineSleep()
+                time.sleep(20)
                 raise SystemExit
             elif player.getPos() == "x1y0":
                 print("Welcome to the shops weary traveller! shouts a person over att one of the stores. Do you have any aglets on you perhaps?")
@@ -88,9 +89,6 @@ class flow:
                         pass
 
                 yesOrNo()
-                map = saveManager.read()
-                map["rooms"][player.getPos()]["scenarioRead"] = False
-                saveManager.write(map)
             pass        
         doScenario()
         def saveAndQuitGame(save=False, quit=False):

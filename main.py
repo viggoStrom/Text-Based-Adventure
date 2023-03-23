@@ -78,7 +78,7 @@ def vaultSequence():
     pass
 
 
-# intro()
+intro()
 survivor = playerSetup()
 saveManager = gameManager.map(survivor)
 vaultSequence()

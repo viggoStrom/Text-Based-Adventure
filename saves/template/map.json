@@ -90,8 +90,8 @@
             "enemies": []
         },
         "x1y1": {
-            "name": "",
-            "scenario": "",
+            "name": "grassy wasteland",
+            "scenario": "This place lifts your spirit slightly. Grass seems to be a rare sight in this new world, a shame that it's so gray. Wait there's a cat here!",
             "scenarioRead": false,
             "loot": [],
             "allowedDirections": {
@@ -100,7 +100,9 @@
                 "west": true,
                 "east": true
             },
-            "enemies": []
+            "enemies": [
+                "cat"
+            ]
         },
         "x2y1": {
             "name": "a field",
@@ -121,8 +123,8 @@
             ]
         },
         "x3y1": {
-            "name": "",
-            "scenario": "",
+            "name": "grassy wasteland",
+            "scenario": "This place lifts your spirit slightly. Grass seems to be a rare sight in this new world, a shame that it's so gray. Wait there's a cat here!",
             "scenarioRead": false,
             "loot": [],
             "allowedDirections": {
@@ -131,7 +133,9 @@
                 "west": true,
                 "east": true
             },
-            "enemies": []
+            "enemies": [
+                "cat"
+            ]
         },
         "x4y1": {
             "name": "",
@@ -147,26 +151,26 @@
             "enemies": []
         },
         "x0y2": {
-            "name": "",
-            "scenario": "",
+            "name": "even morer wasteland",
+            "scenario": "No, seriously, there's nothing here. Return, please.",
             "scenarioRead": false,
             "loot": [],
             "allowedDirections": {
                 "north": true,
-                "south": true,
+                "south": false,
                 "west": false,
                 "east": true
             },
             "enemies": []
         },
         "x1y2": {
-            "name": "",
-            "scenario": "",
+            "name": "more wasteland",
+            "scenario": "You quickly realize that this world is very barren and that you should probably head to the settlement you got a glimpse of in the north.",
             "scenarioRead": false,
             "loot": [],
             "allowedDirections": {
                 "north": true,
-                "south": true,
+                "south": false,
                 "west": true,
                 "east": true
             },
@@ -189,26 +193,26 @@
             "enemies": []
         },
         "x3y2": {
-            "name": "",
-            "scenario": "",
+            "name": "more wasteland",
+            "scenario": "You quickly realize that this world is very barren and that you should probably head to the settlement you got a glimpse of in the north.",
             "scenarioRead": false,
             "loot": [],
             "allowedDirections": {
                 "north": true,
-                "south": true,
+                "south": false,
                 "west": true,
                 "east": true
             },
             "enemies": []
         },
         "x4y2": {
-            "name": "",
-            "scenario": "",
+            "name": "even morer wasteland",
+            "scenario": "No, seriously, there's nothing here. Return, please.",
             "scenarioRead": false,
             "loot": [],
             "allowedDirections": {
                 "north": true,
-                "south": true,
+                "south": false,
                 "west": true,
                 "east": false
             },

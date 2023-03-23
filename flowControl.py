@@ -50,12 +50,47 @@ class flow:
 
     def choose(player, saveManager, options):
         def doScenario():
-            if player.getPos() == "x3y0":
+            if player.getPos() == "x3y0" and player.equipped["body"] == items["vaultSuit"]:
                 print("You are safe now. I recognize your suit, you're one of us, just a bit more hardened perhaps *smirks*.")
                 flow.newLineSleep()
                 print("This is one of multiple endings.")
                 flow.newLineSleep()
                 raise SystemExit
+            elif player.getPos() == "x1y0":
+                print("Welcome to the shops weary traveller! shouts a person over att one of the stores. Do you have any aglets on you perhaps?")
+                flow.newLineSleep()
+
+                def yesOrNo():
+                    response = flow.input("(Y/N)... ")
+                    flow.newLineSleep()
+                    
+                    if "n" in response:
+                        print("Well that's a shame ain't it, kiddo.")
+                        flow.newLineSleep()
+                        pass
+                    elif "y" in response:
+                        print("Oh great! I have some quality merchandise like this 9mm gun *now ammo though*.")
+                        flow.newLineSleep()
+                        if items["aglet"] in player.inventory:
+                            print("Before you could give your opinion on the matter the shopkeep hands you the gun and takes all of your caps.")
+                            flow.newLineSleep()
+                            del player.inventory[player.inventory.index(items["aglet"])]
+                            player.pickUp(items["9mmGun"])
+                        else:
+                            print("Ay kiddo, it seems like you don't have any aglets on you there. I can't trade you someone who doesn't have any money.")
+                            flow.newLineSleep()
+                            pass
+                        pass
+                    else:
+                        print("Please rephrase that.")
+                        flow.newLineSleep()
+                        yesOrNo()
+                        pass
+
+                yesOrNo()
+                map = saveManager.read()
+                map["rooms"][player.getPos()]["scenarioRead"] = False
+                saveManager.write(map)
             pass        
         doScenario()
         def saveAndQuitGame(save=False, quit=False):

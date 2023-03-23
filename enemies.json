@@ -4,7 +4,7 @@
             "a cat",
             "cat"
         ],
-        "damage": 1,
+        "damage": 2,
         "speed": 3,
         "health": 3,
         "maxHealth": 3,

@@ -29,15 +29,15 @@ class player:
         self.equipped[place] = items[item]
         for item in self.equipped.values():
             try:
-                self.armor += item["armor"]
+                self.armor = item["armor"]
             except:
                 pass
             try:
-                self.damage += item["damage"]
+                self.damage = item["damage"]
             except:
                 pass
             try:
-                self.speed += item["speed"]
+                self.speed = item["speed"]
             except:
                 pass
         pass
@@ -93,9 +93,9 @@ class player:
                 print(" - " + item["name"][0])
         flow.newLineSleep()
 
-        print("What do you do?")
-        print("<Equip> <Unequip> <Use> <Back>")
-        flow.newLineSleep()
+        # print("What do you do?")
+        # print("<Equip> <Unequip> <Use> <Back>")
+        # flow.newLineSleep()
 
         def findKeyword():
             response = flow.input("... ")
@@ -194,7 +194,7 @@ class player:
                     flow.newLineSleep()
                     findSlot()
 
-                findKeyword()
+                # findKeyword()
                 pass
 
             elif ("un" or "ne") in response:
@@ -213,7 +213,7 @@ class player:
                 flow.newLineSleep()
                 findKeyword()
 
-        findKeyword()
+        # findKeyword()
         pass
 
     def go(self, saveManager, playerInput):

@@ -41,7 +41,7 @@ class flow:
         return re.sub(r"[^a-zA-Z0-9 ]", "", inputString)
 
     def input(prompt):
-        return flow.filter(input(prompt)).lower()
+        return flow.filter(input(prompt.casefold()))
 
     def pressEnter():
         flow.input("[Press enter to continue]")

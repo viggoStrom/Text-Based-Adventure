@@ -16,3 +16,7 @@ This is a text based adventure game where you can explore the wasteland. The gam
 ```bash
 python main.py
 ```
+
+## Technologies
+- Python
+- JSON data storage

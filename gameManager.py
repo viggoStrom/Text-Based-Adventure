@@ -3,6 +3,7 @@ import datetime
 import re
 import shutil
 import json
+import os
 
 class map():
     def __init__(self, player):
@@ -14,7 +15,10 @@ class map():
 
             playerName = re.sub(r"[^a-zA-Z]", "", player.name)
 
-            saveAdress = f'saves/saves/{date}{playerName}{num}.json'
+            saveDir = 'saves/saves'
+            if not os.path.exists(saveDir):
+                os.makedirs(saveDir)
+            saveAdress = f'{saveDir}/{date}{playerName}{num}.json'
 
             try:
                 open(saveAdress, "x")
